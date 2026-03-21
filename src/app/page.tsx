@@ -806,7 +806,7 @@ function AdvocacySection() {
   };
 
   const publications = [
-    { title: "Guía de Soberanía Tecnológica para Organizaciones Sociales", type: "Guía", year: "2025", href: "/recursos/guia-soberania.pdf" },
+    { title: "Guía de Soberanía Tecnológica para Organizaciones Sociales", type: "Guía", year: "2026", href: "/Soberania_Tecnologica_Mareas_2026.pdf" },
     { title: "Juventudes y Participación Política: Diagnóstico Cataluña 2024", type: "Informe", year: "2024", href: "/recursos/diagnostico-juventudes.pdf" },
     { title: "Manual de Incidencia Política con Perspectiva Feminista", type: "Manual", year: "2024", href: "/recursos/manual-incidencia.pdf" },
     { title: "Migraciones y Derechos: Narrativas Transformadoras", type: "Cuaderno", year: "2024", href: "/recursos/narrativas-migrantes.pdf" }
