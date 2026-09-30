@@ -1244,9 +1244,10 @@ function ContactSection() {
               <CardContent className="p-6">
                 <h4 className="font-bold text-[#2C3E50] mb-3">Régimen Jurídico</h4>
                 <p className="text-sm text-[#6B7280] mb-4">
+                  <strong>Mareas, Lab de innovación social y digital</strong> (NIF: G26956961)<br/>
                   Asociación regulada por la Ley 4/2008, de 24 de abril, del libro tercero del
                   Código civil de Cataluña, relativo a las personas jurídicas, y la Ley Orgánica
-                  1/2002, de 22 de marzo, reguladora del derecho de asociación.
+                  1/2002, de 22 de marzo, reguladora del derecho de asociación. Inscrita en el Registre d'Associacions de la Generalitat de Catalunya (secció 1ª, resolució 23/7/26) con número de inscripción: 80169.
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <Button variant="link" className="text-[#6B2D5B] p-0 h-auto text-sm">
@@ -1356,7 +1357,7 @@ function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4" />
-                <a href="mailto:mareaslab@gmail.com" className="hover:text-white">mareaslab.gmail.com</a>
+                <a href="mailto:mareaslab@gmail.com" className="hover:text-white">mareaslab@gmail.com</a>
               </li>
             </ul>
           </div>
@@ -1365,7 +1366,7 @@ function Footer() {
         <Separator className="my-12 bg-white/10" />
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/50">
-          <p>© 2026 Asociación Mareas. Todos los derechos reservados.</p>
+          <p>© 2026 Mareas, Lab de innovación social y digital (NIF: G26956961). Todos los derechos reservados.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-white transition-colors">Aviso Legal</a>
             <a href="#" className="hover:text-white transition-colors">Privacidad</a>
