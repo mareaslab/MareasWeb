@@ -1204,7 +1204,7 @@ function ContactSection() {
                   </div>
                   <div>
                     <p className="font-medium text-[#2C3E50]">Teléfono</p>
-                    <a href="tel:+34XXXXXXXXX" className="text-[#4A7C59] hover:underline">+34 XXX XXX XXX</a>
+                    <a href="tel:+34611614662" className="text-[#4A7C59] hover:underline">+34 611 61 46 62</a>
                   </div>
                 </div>
               </div>
@@ -1215,7 +1215,7 @@ function ContactSection() {
               <h3 className="text-lg font-bold text-[#2C3E50] mb-4">Síguenos</h3>
               <div className="flex gap-3">
                 {[
-                  { icon: Instagram, label: "Instagram", href: "https://www.instagram.com" },
+                  { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/mareaslab" },
                   { icon: Twitter, label: "Twitter", href: "https://www.twitter.com" },
                   { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com" },
                   { icon: Facebook, label: "Facebook", href: "https://www.facebook.com" },
@@ -1300,16 +1300,25 @@ function Footer() {
               Think-and-do tank por los Derechos Humanos.
             </p>
             <div className="flex gap-3">
-              {[Instagram, Twitter, Linkedin, Facebook].map((Icon, index) => (
-                <Button
-                  key={index}
-                  variant="ghost"
-                  size="icon"
-                  className="rounded-full text-white/70 hover:text-white hover:bg-white/10"
-                >
-                  <Icon className="h-5 w-5" />
-                </Button>
-              ))}
+              {[
+                { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/mareaslab" },
+                { icon: Twitter, label: "Twitter", href: "https://www.twitter.com" },
+                { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com" },
+                { icon: Facebook, label: "Facebook", href: "https://www.facebook.com" }
+              ].map((social, index) => {
+                const IconComponent = social.icon;
+                return (
+                  <a key={index} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={`Visitar nuestro perfil en ${social.label}`}>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="rounded-full text-white/70 hover:text-white hover:bg-white/10"
+                    >
+                      <IconComponent className="h-5 w-5" />
+                    </Button>
+                  </a>
+                );
+              })}
             </div>
           </div>
 
@@ -1356,8 +1365,12 @@ function Footer() {
                 <span>43840 Salou, Tarragona</span>
               </li>
               <li className="flex items-center gap-2">
-                <Mail className="h-4 w-4" />
+                <Mail className="h-4 w-4 flex-shrink-0" />
                 <a href="mailto:mareaslab@gmail.com" className="hover:text-white">mareaslab@gmail.com</a>
+              </li>
+              <li className="flex items-center gap-2">
+                <Phone className="h-4 w-4 flex-shrink-0" />
+                <a href="tel:+34611614662" className="hover:text-white">+34 611 61 46 62</a>
               </li>
             </ul>
           </div>
