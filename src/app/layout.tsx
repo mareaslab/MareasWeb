@@ -35,6 +35,9 @@ export const metadata: Metadata = {
     title: "Mareas, Lab de innovación social y digital",
     description: "Transformación estructural hacia la justicia social y la equidad",
   },
+  verification: {
+    google: "MrqJd81BXEgFjDIk_cjCYcZS4WeqKaMCxvbXGE5tA3g",
+  },
 };
 
 export default function RootLayout({
