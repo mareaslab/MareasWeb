@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import { type MareaData } from "@/components/MareaModal";
 // Carga dinámica del modal pesado de Mareas solo cuando se requiera (mejora de rendimiento)
@@ -433,9 +434,9 @@ function MareasSection() {
           {mareasData.map((marea, index) => {
             const IconComponent = marea.icon;
             return (
+              <FadeIn key={marea.id} delay={index * 0.1}>
               <Card
-                key={marea.id}
-                className="group hover:shadow-xl transition-all duration-300 border-0 bg-white overflow-hidden cursor-pointer"
+                className="group hover:shadow-xl transition-all duration-300 border-0 bg-white overflow-hidden cursor-pointer h-full"
                 style={{ animationDelay: `${index * 100}ms` }}
                 onClick={() => handleOpenMarea(marea)}
               >
@@ -469,6 +470,7 @@ function MareasSection() {
                   </Button>
                 </CardFooter>
               </Card>
+              </FadeIn>
             );
           })}
         </div>
@@ -773,7 +775,7 @@ function ServicesSection() {
                   Desarrollamos proyectos respaldados y financiados por el Fondo de Mujeres Calala, fortaleciendo redes, fomentando la equidad y apoyando la acción directa de base comunitaria.
                 </p>
               </div>
-              
+
               <div className="bg-white/10 rounded-xl p-6 backdrop-blur-sm border border-white/10 hover:bg-white/15 transition-colors">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#1A7F72] to-[#125A50] flex items-center justify-center text-white font-black text-xl shadow-inner">
@@ -1272,7 +1274,7 @@ function ContactSection() {
               <CardContent className="p-6">
                 <h4 className="font-bold text-[#2C3E50] mb-3">Régimen Jurídico</h4>
                 <p className="text-sm text-[#6B7280] mb-4">
-                  <strong>Mareas, Lab de innovación social y digital</strong> (NIF: G26956961)<br/>
+                  <strong>Mareas, Lab de innovación social y digital</strong> (NIF: G26956961)<br />
                   Asociación regulada por la Ley 4/2008, de 24 de abril, del libro tercero del
                   Código civil de Cataluña, relativo a las personas jurídicas, y la Ley Orgánica
                   1/2002, de 22 de marzo, reguladora del derecho de asociación. Inscrita en el Registre d'Associacions de la Generalitat de Catalunya (secció 1ª, resolució 23/7/26) con número de inscripción: 80169.
@@ -1416,6 +1418,21 @@ function Footer() {
         </div>
       </div>
     </footer>
+  );
+}
+
+// Animación de aparición al hacer scroll
+function FadeIn({ children, delay = 0, className = "" }: { children: React.ReactNode, delay?: number, className?: string }) {
+  return (
+    <motion.div
+      className={className}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.7, ease: "easeOut", delay }}
+    >
+      {children}
+    </motion.div>
   );
 }
 
