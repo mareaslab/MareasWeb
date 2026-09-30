@@ -745,20 +745,48 @@ function ServicesSection() {
           </div>
         </div>
 
-        {/* Testimonial */}
-        <div className="mt-16 bg-[#6B2D5B] rounded-2xl p-8 md:p-12 text-white">
-          <div className="max-w-3xl mx-auto text-center">
-            <Quote className="h-12 w-12 mx-auto mb-6 opacity-50" />
-            <blockquote className="text-xl md:text-2xl font-medium mb-6 leading-relaxed">
-              "Trabajar con Mareas fue una experiencia transformadora. Su enfoque de investigación-acción
-              nos permitió comprender profundamente las necesidades de nuestra comunidad y diseñar
-              intervenciones realmente efectivas."
-            </blockquote>
-            <div className="flex items-center justify-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-white/20" />
-              <div className="text-left">
-                <p className="font-semibold">María García</p>
-                <p className="text-white/70 text-sm">Directora, Fundación Horizontes</p>
+        {/* Real Projects */}
+        <div className="mt-16 bg-gradient-to-br from-[#6B2D5B] to-[#4A1D3F] rounded-2xl p-8 md:p-12 text-white relative overflow-hidden shadow-xl">
+          <div className="absolute top-0 right-0 -mr-16 -mt-16 opacity-10 blur-3xl pointer-events-none">
+            <div className="w-64 h-64 bg-white rounded-full"></div>
+          </div>
+          <div className="absolute bottom-0 left-0 -ml-16 -mb-16 opacity-10 blur-3xl pointer-events-none">
+            <div className="w-64 h-64 bg-white rounded-full"></div>
+          </div>
+          <div className="max-w-4xl mx-auto text-center relative z-10">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">Experiencia en Proyectos Reales</h3>
+            <p className="text-lg text-white/90 mb-10 leading-relaxed max-w-2xl mx-auto">
+              Nuestra metodología de investigación y acción no se queda en la teoría. Contamos con el respaldo y la financiación de entidades clave para el impacto social.
+            </p>
+            <div className="grid md:grid-cols-2 gap-6 text-left">
+              <div className="bg-white/10 rounded-xl p-6 backdrop-blur-sm border border-white/10 hover:bg-white/15 transition-colors">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-12 h-12 rounded-lg bg-white flex items-center justify-center text-[#6B2D5B] font-black text-xl shadow-inner">
+                    C
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold">Fondo Calala</h4>
+                    <span className="text-xs text-white/60 uppercase tracking-wider font-semibold">Financiador</span>
+                  </div>
+                </div>
+                <p className="text-white/80 text-sm leading-relaxed">
+                  Desarrollamos proyectos respaldados y financiados por el Fondo de Mujeres Calala, fortaleciendo redes, fomentando la equidad y apoyando la acción directa de base comunitaria.
+                </p>
+              </div>
+              
+              <div className="bg-white/10 rounded-xl p-6 backdrop-blur-sm border border-white/10 hover:bg-white/15 transition-colors">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#1A7F72] to-[#125A50] flex items-center justify-center text-white font-black text-xl shadow-inner">
+                    R
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold">Proyecto Radix</h4>
+                    <span className="text-xs text-white/60 uppercase tracking-wider font-semibold">Intervención</span>
+                  </div>
+                </div>
+                <p className="text-white/80 text-sm leading-relaxed">
+                  Participamos activamente en iniciativas transformadoras como Radix, aplicando herramientas digitales e investigación para impulsar la soberanía tecnológica y el cambio social.
+                </p>
               </div>
             </div>
           </div>
