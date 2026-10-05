@@ -803,13 +803,22 @@ function ServicesSection() {
 function ProjectsSection() {
   const projects = [
     {
-      title: "Proyecto Radix: Voces en contracorriente",
+      title: "«Voces en contracorriente: Escuela de Comunicación Feminista y Contranarativa para la paz»",
       category: "Comunicación Formativa e Incidencia",
       status: "En ejecución",
+      budget: "10.000€",
+      description: "Iniciativa de comunicación formativa y de incidencia dirigida principalmente a mujeres jóvenes migrantes en Cataluña (y nivel estatal). Parte de una premisa política clara: las mujeres migrantes jóvenes no necesitan que alguien hable por ellas; necesitan herramientas, espacios seguros y comunidad para hablar por sí mismas. Contribuye a la participación social frente al riesgo de exclusión.",
+      details: "La escuela se articula en tres fases: (I) diseño metodológico participativo con una red de formadoras expertas en comunicación comunitaria, activismo y feminismos; (II) ciclo de formación híbrida sobre narrativas de género, análisis de discursos de odio, ciberfeminismo y soberanía tecnológica; (III) encuentro presencial en Barcelona con producción colaborativa de contenidos y diálogo intergeneracional.",
+      impact: "Enmarcado en la Línea A5 (sensibilización, comunicación e investigación). Su objetivo es producir materiales digitales de libre acceso y crear una red activa de creadoras de contenido feministas jóvenes migrantes, actuando como intervención política frente a los discursos de odio antimigración."
+    },
+    {
+      title: "«Proyecto Radix»",
+      category: "Innovación Social y Digital",
+      status: "En ejecución",
       budget: "Fondo Calala y Otros",
-      description: "Iniciativa dirigida a mujeres jóvenes migrantes y racializadas en Cataluña, con alcance virtual al resto de España. Nace de la premisa de que estas jóvenes no necesitan que alguien hable por ellas, sino herramientas, espacios seguros y comunidad para alzar sus propias voces y construir contranarrativas para la paz.",
-      details: "El proyecto se articula mediante un diseño participativo con expertas en activismo y feminismos. Incluye un ciclo híbrido (Google Classroom + tutorías individualizadas) sobre ciberfeminismo, discursos de odio y soberanía tecnológica, culminando en un encuentro presencial en Barcelona de producción colaborativa y diálogo intergeneracional.",
-      impact: "Se prevé la participación directa de entre 30 y 60 mujeres (18-35 años) en situación de vulnerabilidad múltiple (exiliadas, racializadas, etc.). Se espera llegar a más de 1.000 personas mediante los productos comunicativos generados, interviniendo políticamente frente a los discursos de odio antimigración."
+      description: "Dirigido a mujeres migrantes y racializadas jóvenes en su diversidad en Cataluña (y alcance estatal). Su objetivo principal es implementar la iniciativa «Voces en contracorriente», brindando espacios seguros y herramientas comunitarias para que las jóvenes hablen por sí mismas.",
+      details: "Incluye el diseño participativo con expertas en activismo y feminismos, un ciclo de formación híbrida (Google Classroom + tutorías) sobre ciberfeminismo y discursos de odio, y un encuentro presencial en Barcelona para producir contenido colaborativo y fomentar el diálogo intergeneracional con las diásporas latinoamericanas.",
+      impact: "Se prevé la participación directa de entre 30 y 60 mujeres (18-35 años) en situación de vulnerabilidad múltiple (exiliadas, racializadas, etc.). Se espera alcanzar a más de 1.000 personas mediante la difusión de contranarrativas en plataformas digitales, interviniendo políticamente frente al odio antimigración."
     }
   ];
 
