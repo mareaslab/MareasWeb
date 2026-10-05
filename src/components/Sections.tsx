@@ -204,12 +204,12 @@ function HeroSection() {
 
           {/* Main Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
-            Transformación estructural hacia la{" "}
-            <span className="text-[#2A9F8A]">justicia social</span> y la equidad
+            Mareas, Lab de innovación <span className="text-[#2A9F8A]">social y digital</span>
           </h1>
 
           {/* Subheadline */}
           <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 max-w-3xl leading-relaxed">
+            Transformación estructural hacia la justicia social y la equidad. 
             Somos una organización de base juvenil e intercultural que trabaja por los Derechos Humanos
             desde el feminismo interseccional. Investigamos, incidimos y acompañamos a comunidades y
             administraciones en la construcción de una sociedad más justa.
@@ -803,31 +803,13 @@ function ServicesSection() {
 function ProjectsSection() {
   const projects = [
     {
-      title: "«Voces en contracorriente: Escuela de Comunicación Feminista y Contranarativa para la paz»",
+      title: "Proyecto Radix: Voces en contracorriente",
       category: "Comunicación Formativa e Incidencia",
       status: "En ejecución",
-      budget: "10.000€",
-      description: "Iniciativa de comunicación formativa y de incidencia dirigida principalmente a mujeres jóvenes migrantes en Cataluña (y nivel estatal). Parte de una premisa política clara: las mujeres migrantes jóvenes no necesitan que alguien hable por ellas; necesitan herramientas, espacios seguros y comunidad para hablar por sí mismas. Contribuye a la participación social frente al riesgo de exclusión.",
-      details: "La escuela se articula en tres fases: (I) diseño metodológico participativo con una red de formadoras expertas en comunicación comunitaria, activismo y feminismos; (II) ciclo de formación híbrida sobre narrativas de género, análisis de discursos de odio, ciberfeminismo y soberanía tecnológica; (III) encuentro presencial en Barcelona con producción colaborativa de contenidos y diálogo intergeneracional.",
-      impact: "Enmarcado en la Línea A5 (sensibilización, comunicación e investigación). Su objetivo es producir materiales digitales de libre acceso y crear una red activa de creadoras de contenido feministas jóvenes migrantes, actuando como intervención política frente a los discursos de odio antimigración."
-    },
-    {
-      title: "«Proyecto Radix: Soberanía Tecnológica Comunitaria»",
-      category: "Innovación Social y Digital",
-      status: "Fase 2",
-      budget: "Financiación Propia / Donaciones",
-      description: "Programa de auditoría digital ética y transformación tecnológica para organizaciones del tercer sector y colectivos sociales.",
-      details: "Acompañamos a entidades en su transición hacia herramientas de software libre, garantizando la privacidad de los datos, la ética algorítmica y la independencia frente a los monopolios tecnológicos. Realizamos talleres prácticos y auditorías personalizadas.",
-      impact: "Reducción de la brecha digital y fomento de un ecosistema tecnológico justo, seguro y alineado con los derechos humanos."
-    },
-    {
-      title: "«Jóvenes en Red: Participación Ciudadana Intercultural»",
-      category: "Juventud y Derechos Humanos",
-      status: "Evaluación",
-      budget: "Subvenciones Locales",
-      description: "Espacio de encuentro, formación y empoderamiento para juventudes diversas (migradas, exiliadas y locales) enfocado en la incidencia política.",
-      details: "A través de metodologías participativas y asamblearias, los y las jóvenes identifican las problemáticas de sus entornos y diseñan campañas de sensibilización, reuniéndose con responsables políticos locales para exigir cambios tangibles en sus barrios.",
-      impact: "Fortalecimiento de la participación democrática juvenil, creación de liderazgos comunitarios y fomento de la cohesión social intercultural."
+      budget: "Fondo Calala y Otros",
+      description: "Iniciativa dirigida a mujeres jóvenes migrantes y racializadas en Cataluña, con alcance virtual al resto de España. Nace de la premisa de que estas jóvenes no necesitan que alguien hable por ellas, sino herramientas, espacios seguros y comunidad para alzar sus propias voces y construir contranarrativas para la paz.",
+      details: "El proyecto se articula mediante un diseño participativo con expertas en activismo y feminismos. Incluye un ciclo híbrido (Google Classroom + tutorías individualizadas) sobre ciberfeminismo, discursos de odio y soberanía tecnológica, culminando en un encuentro presencial en Barcelona de producción colaborativa y diálogo intergeneracional.",
+      impact: "Se prevé la participación directa de entre 30 y 60 mujeres (18-35 años) en situación de vulnerabilidad múltiple (exiliadas, racializadas, etc.). Se espera llegar a más de 1.000 personas mediante los productos comunicativos generados, interviniendo políticamente frente a los discursos de odio antimigración."
     }
   ];
 

@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mareas.org"),
-  title: "Mareas, Lab de innovación social y digital | Transformación social y justicia",
+  title: "Mareas, Lab de innovación social y digital",
   description: "Organización de base juvenil e intercultural que trabaja por los Derechos Humanos desde el feminismo interseccional. Investigación-acción, incidencia política y acompañamiento estratégico.",
   keywords: ["Mareas", "Justicia Social", "Derechos Humanos", "Feminismo", "Interculturalidad", "ONG", "Tercer Sector", "Economía Social"],
   authors: [{ name: "Mareas, Lab de innovación social y digital" }],
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     icon: "/favicon.ico",
   },
   openGraph: {
-    title: "Mareas, Lab de innovación social y digital | Transformación estructural hacia la justicia social",
+    title: "Mareas, Lab de innovación social y digital",
     description: "Nueve corrientes de cambio que confluyen en un mismo océano de justicia social.",
     url: "https://mareas.org",
     siteName: "Mareas, Lab de innovación social y digital",
