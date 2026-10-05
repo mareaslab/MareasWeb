@@ -812,13 +812,13 @@ function ProjectsSection() {
       impact: "Enmarcado en la Línea A5 (sensibilización, comunicación e investigación). Su objetivo es producir materiales digitales de libre acceso y crear una red activa de creadoras de contenido feministas jóvenes migrantes, actuando como intervención política frente a los discursos de odio antimigración."
     },
     {
-      title: "«Proyecto Radix»",
-      category: "Innovación Social y Digital",
-      status: "En ejecución",
-      budget: "Fondo Calala y Otros",
-      description: "Dirigido a mujeres migrantes y racializadas jóvenes en su diversidad en Cataluña (y alcance estatal). Su objetivo principal es implementar la iniciativa «Voces en contracorriente», brindando espacios seguros y herramientas comunitarias para que las jóvenes hablen por sí mismas.",
-      details: "Incluye el diseño participativo con expertas en activismo y feminismos, un ciclo de formación híbrida (Google Classroom + tutorías) sobre ciberfeminismo y discursos de odio, y un encuentro presencial en Barcelona para producir contenido colaborativo y fomentar el diálogo intergeneracional con las diásporas latinoamericanas.",
-      impact: "Se prevé la participación directa de entre 30 y 60 mujeres (18-35 años) en situación de vulnerabilidad múltiple (exiliadas, racializadas, etc.). Se espera alcanzar a más de 1.000 personas mediante la difusión de contranarrativas en plataformas digitales, interviniendo políticamente frente al odio antimigración."
+      title: "«Tomamos la Palabra: Escuela política y digital de mujeres y disidencias juveniles migrantes»",
+      category: "Escuela de Formación y Liderazgo",
+      status: "Proyecto a 24 meses",
+      budget: "Radix",
+      description: "Iniciativa para fortalecer el liderazgo político y comunicativo de jóvenes mujeres y disidencias sexuales migrantes, exiliadas y refugiadas del Sur Global (18-35 años, con flexibilidad etaria por contextos de precariedad). Su objetivo es brindar herramientas para defender derechos, combatir discursos de odio y ocupar espacios en el activismo feminista y LGTBIQA+.",
+      details: "Escuela de dos años de modalidad híbrida (Cataluña presencial y resto de España virtual) mediante metodología IAP. Incluye módulos de política interseccional y competencias digitales, producción de un podcast propio, escuela de verano, apoyo tecnológico a organizaciones y diálogos intergeneracionales con activistas históricas.",
+      impact: "Contribuye directamente a la protección de los derechos fundamentales de mujeres y personas LGTBIAQ+ migrantes, incluidas aquellas en situación irregular. A través de contranarrativas propias, promueve la dignidad humana, la igualdad y la democracia, enfrentando el juvenicidio moral y la exclusión estructural."
     }
   ];
 
