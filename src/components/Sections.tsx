@@ -525,6 +525,7 @@ function AboutSection() {
   return (
     <section id="quienes" className="py-20 md:py-32 bg-[#F8F9FA]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <FadeIn>
         {/* Section Header */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-20">
           <div>
@@ -634,6 +635,7 @@ function AboutSection() {
             </div>
           </div>
         </div>
+        </FadeIn>
       </div>
     </section>
   );
@@ -676,6 +678,7 @@ function ServicesSection() {
   return (
     <section id="servicios" className="py-20 md:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <FadeIn>
         {/* Section Header */}
         <div className="text-center mb-16">
           <Badge className="mb-4 bg-[#6B2D5B]/10 text-[#6B2D5B]">Mareas Consulting & Lab</Badge>
@@ -794,6 +797,7 @@ function ServicesSection() {
             </div>
           </div>
         </div>
+        </FadeIn>
       </div>
     </section>
   );
@@ -825,6 +829,7 @@ function ProjectsSection() {
   return (
     <section id="proyectos" className="py-20 md:py-32 bg-[#F8F9FA]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <FadeIn>
         {/* Section Header */}
         <div className="text-center mb-16">
           <Badge className="mb-4 bg-[#6B2D5B]/10 text-[#6B2D5B]">Nuestra acción en el territorio</Badge>
@@ -903,6 +908,7 @@ function ProjectsSection() {
             </Card>
           ))}
         </div>
+        </FadeIn>
       </div>
     </section>
   );
@@ -961,6 +967,7 @@ function AdvocacySection() {
   return (
     <section id="incidencia" className="py-20 md:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <FadeIn>
         {/* Section Header */}
         <div className="text-center mb-16">
           <Badge className="mb-4 bg-[#1A7F72]/10 text-[#1A7F72]">Mareas Lab</Badge>
@@ -1084,6 +1091,7 @@ function AdvocacySection() {
             </Card>
           </div>
         </div>
+        </FadeIn>
       </div>
     </section>
   );
@@ -1152,6 +1160,7 @@ function ContactSection() {
   return (
     <section id="contacto" className="py-20 md:py-32 bg-[#F8F9FA]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <FadeIn>
         {/* Section Header */}
         <div className="text-center mb-16">
           <Badge className="mb-4 bg-[#6B2D5B]/10 text-[#6B2D5B]">Únete al cambio</Badge>
@@ -1406,6 +1415,7 @@ function ContactSection() {
             </Card>
           </div>
         </div>
+        </FadeIn>
       </div>
     </section>
   );
