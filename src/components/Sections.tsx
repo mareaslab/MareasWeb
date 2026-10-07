@@ -957,16 +957,12 @@ function AdvocacySection() {
   };
 
   const publications = [
-    { title: "Guía de Soberanía Tecnológica para Organizaciones Sociales", type: "Guía", year: "2026", href: "/Soberania_Tecnologica_Mareas_2026.pdf" },
-    { title: "Juventudes y Participación Política: Diagnóstico Cataluña 2024", type: "Informe", year: "2024", href: "/recursos/diagnostico-juventudes.pdf" },
-    { title: "Manual de Incidencia Política con Perspectiva Feminista", type: "Manual", year: "2024", href: "/recursos/manual-incidencia.pdf" },
-    { title: "Migraciones y Derechos: Narrativas Transformadoras", type: "Cuaderno", year: "2024", href: "/recursos/narrativas-migrantes.pdf" }
+    { title: "Guía de Soberanía Tecnológica para Organizaciones Sociales", type: "Guía", year: "2026", href: "/Soberania_Tecnologica_Mareas_2026.pdf" }
   ];
 
   const campaigns = [
-    { title: "Vías Legales y Seguras", desc: "Por una migración digna y sin fronteras mortales", active: true },
-    { title: "Tech Ética", desc: "Soberanía digital para el tercer sector", active: true },
-    { title: "Juventudes Visibles", desc: "Amplificando voces jóvenes en políticas públicas", active: false }
+    { title: "Voces en contracorriente", desc: "Escuela de Comunicación Feminista y Contranarrativa para la paz", active: true },
+    { title: "Tomamos la Palabra", desc: "Escuela política y digital de mujeres y disidencias juveniles migrantes", active: true }
   ];
 
   return (
@@ -1014,10 +1010,7 @@ function AdvocacySection() {
                 </Card>
               ))}
             </div>
-            <Button variant="outline" className="w-full mt-6 border-primary text-primary">
-              Ver todas las publicaciones
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
+
           </div>
 
           {/* Campaigns */}
