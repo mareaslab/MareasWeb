@@ -676,7 +676,7 @@ function ServicesSection() {
   };
 
   return (
-    <section id="servicios" className="py-20 md:py-32 bg-white">
+    <section id="servicios" className="py-20 md:py-32 bg-white" style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto none auto 800px' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
         {/* Section Header */}
@@ -827,7 +827,7 @@ function ProjectsSection() {
   ];
 
   return (
-    <section id="proyectos" className="py-20 md:py-32 bg-[#F8F9FA]">
+    <section id="proyectos" className="py-20 md:py-32 bg-[#F8F9FA]" style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto none auto 800px' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
         {/* Section Header */}
@@ -965,7 +965,7 @@ function AdvocacySection() {
   ];
 
   return (
-    <section id="incidencia" className="py-20 md:py-32 bg-white">
+    <section id="incidencia" className="py-20 md:py-32 bg-white" style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto none auto 800px' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
         {/* Section Header */}
@@ -1158,7 +1158,7 @@ function ContactSection() {
   };
 
   return (
-    <section id="contacto" className="py-20 md:py-32 bg-[#F8F9FA]">
+    <section id="contacto" className="py-20 md:py-32 bg-[#F8F9FA]" style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto none auto 800px' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
         {/* Section Header */}

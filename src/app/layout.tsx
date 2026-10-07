@@ -40,6 +40,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { MotionProvider } from "@/components/MotionProvider";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -50,8 +52,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
       >
-        {children}
-        <Toaster />
+        <MotionProvider>
+          {children}
+          <Toaster />
+        </MotionProvider>
       </body>
     </html>
   );
