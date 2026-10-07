@@ -97,10 +97,10 @@ function Header() {
           {/* Logo */}
           <a href="/" className="flex items-center gap-2 group">
             <div className="relative">
-              <Waves className="h-8 w-8 text-[#6B2D5B] group-hover:text-[#1A7F72] transition-colors" />
-              <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-[#1A7F72] rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+              <Waves className="h-8 w-8 text-primary group-hover:text-secondary transition-colors" />
+              <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-secondary rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
-            <span className={`text-xl font-bold ${isScrolled ? "text-[#6B2D5B]" : "text-white"}`}>
+            <span className={`text-xl font-bold ${isScrolled ? "text-primary" : "text-white"}`}>
               Mareas
             </span>
           </a>
@@ -111,7 +111,7 @@ function Header() {
               <a
                 key={item.href}
                 href={item.href}
-                className={`text-sm font-medium transition-colors hover:text-[#1A7F72] ${isScrolled ? "text-[#2C3E50]" : "text-white/90"
+                className={`text-sm font-medium transition-colors hover:text-secondary ${isScrolled ? "text-foreground" : "text-white/90"
                   }`}
               >
                 {item.label}
@@ -121,10 +121,10 @@ function Header() {
 
           {/* CTA Button Desktop */}
           <div className="hidden md:flex items-center gap-4">
-            <ThemeToggle className={isScrolled ? "text-[#2C3E50]" : "text-white"} />
+            <ThemeToggle className={isScrolled ? "text-foreground" : "text-white"} />
             <Button
               asChild
-              className="bg-[#6B2D5B] hover:bg-[#4B1D3B] text-white"
+              className="bg-primary hover:bg-primary/90 text-white"
             >
               <a href="/contacto">
                 Únete a Mareas
@@ -135,25 +135,25 @@ function Header() {
 
           {/* Mobile Menu */}
           <div className="flex items-center gap-2 md:hidden">
-            <ThemeToggle className={isScrolled ? "text-[#2C3E50]" : "text-white"} />
+            <ThemeToggle className={isScrolled ? "text-foreground" : "text-white"} />
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon">
-                  <Menu className={`h-6 w-6 ${isScrolled ? "text-[#2C3E50]" : "text-white"}`} />
+                  <Menu className={`h-6 w-6 ${isScrolled ? "text-foreground" : "text-white"}`} />
                 </Button>
               </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
               <div className="flex flex-col gap-6 mt-8">
                 <div className="flex items-center gap-2 mb-4">
-                  <Waves className="h-8 w-8 text-[#6B2D5B]" />
-                  <span className="text-xl font-bold text-[#6B2D5B]">Mareas</span>
+                  <Waves className="h-8 w-8 text-primary" />
+                  <span className="text-xl font-bold text-primary">Mareas</span>
                 </div>
                 {navItems.map((item) => (
                   <a
                     key={item.href}
                     href={item.href}
                     onClick={() => setIsOpen(false)}
-                    className="text-lg font-medium text-[#2C3E50] hover:text-[#6B2D5B] transition-colors"
+                    className="text-lg font-medium text-foreground hover:text-primary transition-colors"
                   >
                     {item.label}
                   </a>
@@ -161,7 +161,7 @@ function Header() {
                 <Separator className="my-4" />
                 <Button
                   asChild
-                  className="bg-[#6B2D5B] hover:bg-[#4B1D3B] text-white w-full"
+                  className="bg-primary hover:bg-primary/90 text-white w-full"
                 >
                   <a href="/contacto" onClick={() => setIsOpen(false)}>
                     Únete a Mareas
@@ -198,7 +198,7 @@ function HeroSection() {
 
       {/* Floating elements */}
       <div className="absolute top-20 left-10 w-20 h-20 rounded-full bg-background/10 animate-float" />
-      <div className="absolute top-40 right-20 w-32 h-32 rounded-full bg-[#1A7F72]/20 animate-float" style={{ animationDelay: "2s" }} />
+      <div className="absolute top-40 right-20 w-32 h-32 rounded-full bg-secondary/20 animate-float" style={{ animationDelay: "2s" }} />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-40">
         <div className="max-w-4xl">
@@ -209,7 +209,7 @@ function HeroSection() {
 
           {/* Main Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
-            Mareas, Lab de innovación <span className="text-[#2A9F8A]">social y digital</span>
+            Mareas, Lab de innovación <span className="text-secondary">social y digital</span>
           </h1>
 
           {/* Subheadline */}
@@ -225,7 +225,7 @@ function HeroSection() {
             <Button
               asChild
               size="lg"
-              className="bg-background text-[#6B2D5B] hover:bg-background/90 text-lg px-8 py-6"
+              className="bg-background text-primary hover:bg-background/90 text-lg px-8 py-6"
             >
               <a href="/#mareas">
                 Conoce nuestras 9 Mareas
@@ -424,11 +424,11 @@ function MareasSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <Badge className="mb-4 bg-[#1A7F72]/10 text-[#1A7F72]">Nueve corrientes de cambio</Badge>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#2C3E50] mb-6">
+          <Badge className="mb-4 bg-secondary/10 text-secondary">Nueve corrientes de cambio</Badge>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
             Las 9 Mareas
           </h2>
-          <p className="text-lg text-[#6B7280] max-w-3xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Nueve corrientes de cambio que confluyen en un mismo océano de justicia social.
             Cada Marea es un área de especialización que trabaja de forma interconectada,
             generando sinergias y multiplicando el impacto de nuestras acciones.
@@ -453,7 +453,7 @@ function MareasSection() {
                   >
                     <IconComponent className="h-7 w-7" style={{ color: marea.color }} />
                   </div>
-                  <CardTitle className="text-xl text-[#2C3E50] group-hover:text-[#6B2D5B] transition-colors">
+                  <CardTitle className="text-xl text-foreground group-hover:text-primary transition-colors">
                     {marea.name}
                   </CardTitle>
                   <CardDescription className="text-sm font-medium" style={{ color: marea.color }}>
@@ -461,14 +461,14 @@ function MareasSection() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-[#6B7280] text-sm leading-relaxed">
+                  <p className="text-muted-foreground text-sm leading-relaxed">
                     {marea.description}
                   </p>
                 </CardContent>
                 <CardFooter>
                   <Button
                     variant="ghost"
-                    className="text-[#6B2D5B] hover:text-[#4B1D3B] hover:bg-[#6B2D5B]/5 p-0"
+                    className="text-primary hover:text-primary/80 hover:bg-primary/5 p-0"
                     onClick={(e) => { e.stopPropagation(); handleOpenMarea(marea); }}
                   >
                     Conocer más
@@ -528,38 +528,38 @@ function AboutSection() {
   ];
 
   return (
-    <section id="quienes" className="py-20 md:py-32 bg-[#F8F9FA]">
+    <section id="quienes" className="py-20 md:py-32 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
         {/* Section Header */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-20">
           <div>
-            <Badge className="mb-4 bg-[#6B2D5B]/10 text-[#6B2D5B]">Nuestra identidad</Badge>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#2C3E50] mb-6">
+            <Badge className="mb-4 bg-primary/10 text-primary">Nuestra identidad</Badge>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
               ¿Quiénes somos?
             </h2>
-            <p className="text-lg text-[#6B7280] mb-6 leading-relaxed">
-              La <strong className="text-[#6B2D5B]">ASOCIACIÓN MAREAS, LAB DE INNOVACIÓN SOCIAL Y DIGITAL</strong>, es una organización de base mayoritariamente juvenil e intercultural,
+            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+              La <strong className="text-primary">ASOCIACIÓN MAREAS, LAB DE INNOVACIÓN SOCIAL Y DIGITAL</strong>, es una organización de base mayoritariamente juvenil e intercultural,
               constituida como asociación sin ánimo de lucro regulada por la
-              <strong className="text-[#6B2D5B]"> Ley 4/2008 de Cataluña</strong>.
+              <strong className="text-primary"> Ley 4/2008 de Cataluña</strong>.
             </p>
-            <p className="text-lg text-[#6B7280] mb-8 leading-relaxed">
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
               Nuestro modelo de trabajo se fundamenta en la
-              <strong className="text-[#1A7F72]"> investigación-acción</strong>:
+              <strong className="text-secondary"> investigación-acción</strong>:
               investigamos las realidades sociales para diseñar intervenciones
               efectivas que generen transformación estructural. Perseguimos fines orientados a la promoción de los Derechos Humanos, la justicia social, el feminismo interseccional y la inclusión plena de las personas migradas y refugiadas, acompañando a comunidades en la construcción de una sociedad más equitativa y democrática.
             </p>
             <div className="flex flex-wrap gap-4">
-              <div className="flex items-center gap-2 text-[#2C3E50]">
-                <CheckCircle className="h-5 w-5 text-[#1A7F72]" />
+              <div className="flex items-center gap-2 text-foreground">
+                <CheckCircle className="h-5 w-5 text-secondary" />
                 <span className="font-medium">Compromiso ODS</span>
               </div>
-              <div className="flex items-center gap-2 text-[#2C3E50]">
-                <CheckCircle className="h-5 w-5 text-[#1A7F72]" />
+              <div className="flex items-center gap-2 text-foreground">
+                <CheckCircle className="h-5 w-5 text-secondary" />
                 <span className="font-medium">Agenda 2030</span>
               </div>
-              <div className="flex items-center gap-2 text-[#2C3E50]">
-                <CheckCircle className="h-5 w-5 text-[#1A7F72]" />
+              <div className="flex items-center gap-2 text-foreground">
+                <CheckCircle className="h-5 w-5 text-secondary" />
                 <span className="font-medium">Transparencia</span>
               </div>
             </div>
@@ -577,13 +577,13 @@ function AboutSection() {
             </div>
             {/* Decorative elements */}
             <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-[#4A7C59]/20 rounded-xl -z-10" />
-            <div className="absolute -top-4 -right-4 w-32 h-32 bg-[#1A7F72]/10 rounded-full -z-10" />
+            <div className="absolute -top-4 -right-4 w-32 h-32 bg-secondary/10 rounded-full -z-10" />
           </div>
         </div>
 
         {/* Values Grid */}
         <div className="mt-20">
-          <h3 className="text-2xl font-bold text-[#2C3E50] text-center mb-12">Nuestros Valores</h3>
+          <h3 className="text-2xl font-bold text-foreground text-center mb-12">Nuestros Valores</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {values.map((value, index) => {
               const IconComponent = value.icon;
@@ -592,11 +592,11 @@ function AboutSection() {
                   key={index}
                   className="bg-background rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow"
                 >
-                  <div className="w-12 h-12 rounded-lg bg-[#6B2D5B]/10 flex items-center justify-center mb-4">
-                    <IconComponent className="h-6 w-6 text-[#6B2D5B]" />
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                    <IconComponent className="h-6 w-6 text-primary" />
                   </div>
-                  <h4 className="text-lg font-semibold text-[#2C3E50] mb-2">{value.title}</h4>
-                  <p className="text-[#6B7280] text-sm leading-relaxed">{value.description}</p>
+                  <h4 className="text-lg font-semibold text-foreground mb-2">{value.title}</h4>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{value.description}</p>
                 </div>
               );
             })}
@@ -608,34 +608,34 @@ function AboutSection() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <Badge className="mb-4 bg-[#4A7C59]/10 text-[#4A7C59]">Compromiso</Badge>
-              <h3 className="text-2xl font-bold text-[#2C3E50] mb-4">Transparencia Institucional</h3>
-              <p className="text-[#6B7280] mb-6 leading-relaxed">
+              <h3 className="text-2xl font-bold text-foreground mb-4">Transparencia Institucional</h3>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
                 Como entidad regulada por la Ley 4/2008 de Cataluña, rendimos cuentas de cada euro
                 invertido y cada impacto generado. Los ingresos de nuestros servicios de consultoría
                 se reinvierten íntegramente en fines sociales.
               </p>
-              <Button variant="outline" className="border-[#6B2D5B] text-[#6B2D5B] hover:bg-[#6B2D5B]/5"
+              <Button variant="outline" className="border-primary text-primary hover:bg-primary/5"
                 onClick={() => window.open("https://drive.google.com", "_blank")}>
                 <FileText className="mr-2 h-4 w-4" />
                 Ver memorias anuales
               </Button>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <div className="bg-[#F8F9FA] rounded-xl p-6 text-center">
-                <p className="text-3xl font-bold text-[#6B2D5B]">100%</p>
-                <p className="text-sm text-[#6B7280]">Reinversión social</p>
+              <div className="bg-muted/30 rounded-xl p-6 text-center">
+                <p className="text-3xl font-bold text-primary">100%</p>
+                <p className="text-sm text-muted-foreground">Reinversión social</p>
               </div>
-              <div className="bg-[#F8F9FA] rounded-xl p-6 text-center">
-                <p className="text-3xl font-bold text-[#1A7F72]">Ley 4/2008</p>
-                <p className="text-sm text-[#6B7280]">Régimen jurídico</p>
+              <div className="bg-muted/30 rounded-xl p-6 text-center">
+                <p className="text-3xl font-bold text-secondary">Ley 4/2008</p>
+                <p className="text-sm text-muted-foreground">Régimen jurídico</p>
               </div>
-              <div className="bg-[#F8F9FA] rounded-xl p-6 text-center">
+              <div className="bg-muted/30 rounded-xl p-6 text-center">
                 <p className="text-3xl font-bold text-[#4A7C59]">ESS</p>
-                <p className="text-sm text-[#6B7280]">Economía Social</p>
+                <p className="text-sm text-muted-foreground">Economía Social</p>
               </div>
-              <div className="bg-[#F8F9FA] rounded-xl p-6 text-center">
+              <div className="bg-muted/30 rounded-xl p-6 text-center">
                 <p className="text-3xl font-bold text-[#E74C3C]">5 años</p>
-                <p className="text-sm text-[#6B7280]">Mandato Junta</p>
+                <p className="text-sm text-muted-foreground">Mandato Junta</p>
               </div>
             </div>
           </div>
@@ -686,14 +686,14 @@ function ServicesSection() {
         <FadeIn>
         {/* Section Header */}
         <div className="text-center mb-16">
-          <Badge className="mb-4 bg-[#6B2D5B]/10 text-[#6B2D5B]">Mareas Consulting & Lab</Badge>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#2C3E50] mb-6">
+          <Badge className="mb-4 bg-primary/10 text-primary">Mareas Consulting & Lab</Badge>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
             Servicios con Impacto Social
           </h2>
-          <p className="text-lg text-[#6B7280] max-w-3xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Ofrecemos servicios especializados de consultoría, auditoría digital ética y formación
             para instituciones y empresas de la Economía Social y Solidaria.
-            <strong className="text-[#1A7F72]"> Todos los ingresos se reinvierten en fines sociales.</strong>
+            <strong className="text-secondary"> Todos los ingresos se reinvierten en fines sociales.</strong>
           </p>
         </div>
 
@@ -702,19 +702,19 @@ function ServicesSection() {
           {servicesData.map((service, index) => {
             const IconComponent = service.icon;
             return (
-              <Card key={index} className="border border-gray-100 hover:border-[#6B2D5B]/20 hover:shadow-lg transition-all group">
+              <Card key={index} className="border border-gray-100 hover:border-primary/20 hover:shadow-lg transition-all group">
                 <CardHeader>
                   <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#6B2D5B] to-[#4B1D3B] flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
                     <IconComponent className="h-7 w-7 text-white" />
                   </div>
-                  <CardTitle className="text-xl text-[#2C3E50]">{service.title}</CardTitle>
-                  <CardDescription className="text-[#6B7280]">{service.description}</CardDescription>
+                  <CardTitle className="text-xl text-foreground">{service.title}</CardTitle>
+                  <CardDescription className="text-muted-foreground">{service.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
                     {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center gap-2 text-sm text-[#6B7280]">
-                        <CheckCircle className="h-4 w-4 text-[#1A7F72]" />
+                      <li key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <CheckCircle className="h-4 w-4 text-secondary" />
                         {feature}
                       </li>
                     ))}
@@ -723,7 +723,7 @@ function ServicesSection() {
                 <CardFooter>
                   <Button
                     variant="outline"
-                    className="w-full border-[#6B2D5B] text-[#6B2D5B] hover:bg-[#6B2D5B] hover:text-white"
+                    className="w-full border-primary text-primary hover:bg-primary hover:text-white"
                     onClick={scrollToContact}
                   >
                     Solicitar información
@@ -737,7 +737,7 @@ function ServicesSection() {
 
         {/* Process Section */}
         <div className="bg-gradient-to-br from-[#F8F9FA] to-white rounded-2xl p-8 md:p-12">
-          <h3 className="text-2xl font-bold text-[#2C3E50] text-center mb-12">Nuestro Proceso de Trabajo</h3>
+          <h3 className="text-2xl font-bold text-foreground text-center mb-12">Nuestro Proceso de Trabajo</h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { step: "01", title: "Contacto inicial", desc: "Escuchamos tus necesidades y objetivos" },
@@ -746,11 +746,11 @@ function ServicesSection() {
               { step: "04", title: "Ejecución", desc: "Implementamos y evaluamos el impacto" }
             ].map((item, index) => (
               <div key={index} className="text-center">
-                <div className="w-16 h-16 rounded-full bg-[#6B2D5B] text-white flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                <div className="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center text-xl font-bold mx-auto mb-4">
                   {item.step}
                 </div>
-                <h4 className="text-lg font-semibold text-[#2C3E50] mb-2">{item.title}</h4>
-                <p className="text-sm text-[#6B7280]">{item.desc}</p>
+                <h4 className="text-lg font-semibold text-foreground mb-2">{item.title}</h4>
+                <p className="text-sm text-muted-foreground">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -772,7 +772,7 @@ function ServicesSection() {
             <div className="grid md:grid-cols-2 gap-6 text-left">
               <div className="bg-background/10 rounded-xl p-6 backdrop-blur-sm border border-white/10 hover:bg-background/15 transition-colors">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-12 h-12 rounded-lg bg-background flex items-center justify-center text-[#6B2D5B] font-black text-xl shadow-inner">
+                  <div className="w-12 h-12 rounded-lg bg-background flex items-center justify-center text-primary font-black text-xl shadow-inner">
                     C
                   </div>
                   <div>
@@ -832,16 +832,16 @@ function ProjectsSection() {
   ];
 
   return (
-    <section id="proyectos" className="py-20 md:py-32 bg-[#F8F9FA]" style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto none auto 800px' }}>
+    <section id="proyectos" className="py-20 md:py-32 bg-muted/30" style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto none auto 800px' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
         {/* Section Header */}
         <div className="text-center mb-16">
-          <Badge className="mb-4 bg-[#6B2D5B]/10 text-[#6B2D5B]">Nuestra acción en el territorio</Badge>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#2C3E50] mb-6">
+          <Badge className="mb-4 bg-primary/10 text-primary">Nuestra acción en el territorio</Badge>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
             Proyectos y Actividades
           </h2>
-          <p className="text-lg text-[#6B7280] max-w-3xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Desde la investigación hasta la acción directa, impulsamos iniciativas con impacto real 
             para promover los derechos humanos y la inclusión plena.
           </p>
@@ -875,11 +875,11 @@ function ProjectsSection() {
                 <div className="md:w-2/3 p-8 bg-background">
                   <div className="space-y-6">
                     <div>
-                      <h4 className="text-lg font-bold text-[#2C3E50] mb-2 flex items-center gap-2">
-                        <Lightbulb className="h-5 w-5 text-[#6B2D5B]" />
+                      <h4 className="text-lg font-bold text-foreground mb-2 flex items-center gap-2">
+                        <Lightbulb className="h-5 w-5 text-primary" />
                         ¿Qué es y para qué?
                       </h4>
-                      <p className="text-[#6B7280] leading-relaxed">
+                      <p className="text-muted-foreground leading-relaxed">
                         {project.description}
                       </p>
                     </div>
@@ -887,11 +887,11 @@ function ProjectsSection() {
                     <Separator className="bg-gray-100" />
                     
                     <div>
-                      <h4 className="text-lg font-bold text-[#2C3E50] mb-2 flex items-center gap-2">
-                        <Users className="h-5 w-5 text-[#6B2D5B]" />
+                      <h4 className="text-lg font-bold text-foreground mb-2 flex items-center gap-2">
+                        <Users className="h-5 w-5 text-primary" />
                         ¿Cómo y con quién?
                       </h4>
-                      <p className="text-[#6B7280] leading-relaxed">
+                      <p className="text-muted-foreground leading-relaxed">
                         {project.details}
                       </p>
                     </div>
@@ -899,11 +899,11 @@ function ProjectsSection() {
                     <Separator className="bg-gray-100" />
 
                     <div>
-                      <h4 className="text-lg font-bold text-[#2C3E50] mb-2 flex items-center gap-2">
-                        <TrendingUp className="h-5 w-5 text-[#6B2D5B]" />
+                      <h4 className="text-lg font-bold text-foreground mb-2 flex items-center gap-2">
+                        <TrendingUp className="h-5 w-5 text-primary" />
                         Impacto esperado
                       </h4>
-                      <p className="text-[#6B7280] leading-relaxed">
+                      <p className="text-muted-foreground leading-relaxed">
                         {project.impact}
                       </p>
                     </div>
@@ -975,11 +975,11 @@ function AdvocacySection() {
         <FadeIn>
         {/* Section Header */}
         <div className="text-center mb-16">
-          <Badge className="mb-4 bg-[#1A7F72]/10 text-[#1A7F72]">Mareas Lab</Badge>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#2C3E50] mb-6">
+          <Badge className="mb-4 bg-secondary/10 text-secondary">Mareas Lab</Badge>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
             Incidencia y Recursos
           </h2>
-          <p className="text-lg text-[#6B7280] max-w-3xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Espacio para publicaciones de investigación, guías sobre soberanía tecnológica
             y campañas de incidencia política.
           </p>
@@ -988,8 +988,8 @@ function AdvocacySection() {
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Publications */}
           <div>
-            <h3 className="text-xl font-bold text-[#2C3E50] mb-6 flex items-center gap-2">
-              <BookOpen className="h-5 w-5 text-[#6B2D5B]" />
+            <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
+              <BookOpen className="h-5 w-5 text-primary" />
               Publicaciones Recientes
             </h3>
             <div className="space-y-4">
@@ -997,24 +997,24 @@ function AdvocacySection() {
                 <Card key={index} className="hover:shadow-md transition-shadow cursor-pointer group"
                   onClick={() => window.open(pub.href, "_blank")}>
                   <CardContent className="p-4 flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-[#6B2D5B]/10 flex items-center justify-center flex-shrink-0">
-                      <FileText className="h-6 w-6 text-[#6B2D5B]" />
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <FileText className="h-6 w-6 text-primary" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h4 className="font-medium text-[#2C3E50] group-hover:text-[#6B2D5B] transition-colors line-clamp-1">
+                      <h4 className="font-medium text-foreground group-hover:text-primary transition-colors line-clamp-1">
                         {pub.title}
                       </h4>
-                      <p className="text-sm text-[#6B7280]">
+                      <p className="text-sm text-muted-foreground">
                         <Badge variant="secondary" className="mr-2 text-xs">{pub.type}</Badge>
                         {pub.year}
                       </p>
                     </div>
-                    <ArrowUpRight className="h-5 w-5 text-[#6B7280] group-hover:text-[#6B2D5B] transition-colors" />
+                    <ArrowUpRight className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
                   </CardContent>
                 </Card>
               ))}
             </div>
-            <Button variant="outline" className="w-full mt-6 border-[#6B2D5B] text-[#6B2D5B]">
+            <Button variant="outline" className="w-full mt-6 border-primary text-primary">
               Ver todas las publicaciones
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
@@ -1022,8 +1022,8 @@ function AdvocacySection() {
 
           {/* Campaigns */}
           <div>
-            <h3 className="text-xl font-bold text-[#2C3E50] mb-6 flex items-center gap-2">
-              <Megaphone className="h-5 w-5 text-[#1A7F72]" />
+            <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
+              <Megaphone className="h-5 w-5 text-secondary" />
               Campañas Activas
             </h3>
             <div className="space-y-4">
@@ -1037,16 +1037,16 @@ function AdvocacySection() {
                     <div className="flex items-start justify-between">
                       <div>
                         <div className="flex items-center gap-2 mb-1">
-                          <h4 className="font-semibold text-[#2C3E50] group-hover:text-[#6B2D5B] transition-colors">
+                          <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">
                             {campaign.title}
                           </h4>
                           {campaign.active && (
-                            <Badge className="bg-[#1A7F72] text-white text-xs">Activa</Badge>
+                            <Badge className="bg-secondary text-white text-xs">Activa</Badge>
                           )}
                         </div>
-                        <p className="text-sm text-[#6B7280]">{campaign.desc}</p>
+                        <p className="text-sm text-muted-foreground">{campaign.desc}</p>
                       </div>
-                      <ArrowRight className="h-5 w-5 text-[#6B7280] group-hover:text-[#6B2D5B] transition-colors flex-shrink-0" />
+                      <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0" />
                     </div>
                   </CardContent>
                 </Card>
@@ -1076,12 +1076,12 @@ function AdvocacySection() {
                         className="bg-background/10 border-white/20 text-white placeholder:text-white/50"
                       />
                       <Button
-                        className="bg-background text-[#6B2D5B] hover:bg-background/90"
+                        className="bg-background text-primary hover:bg-background/90"
                         onClick={handleNewsletter}
                         disabled={newsletterStatus === "sending" || !newsletterEmail.includes("@")}
                       >
                         {newsletterStatus === "sending" ? (
-                          <span className="animate-spin h-4 w-4 border-2 border-[#6B2D5B] border-t-transparent rounded-full" />
+                          <span className="animate-spin h-4 w-4 border-2 border-primary border-t-transparent rounded-full" />
                         ) : (
                           <Send className="h-4 w-4" />
                         )}
@@ -1163,16 +1163,16 @@ function ContactSection() {
   };
 
   return (
-    <section id="contacto" className="py-20 md:py-32 bg-[#F8F9FA]" style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto none auto 800px' }}>
+    <section id="contacto" className="py-20 md:py-32 bg-muted/30" style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto none auto 800px' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
         {/* Section Header */}
         <div className="text-center mb-16">
-          <Badge className="mb-4 bg-[#6B2D5B]/10 text-[#6B2D5B]">Únete al cambio</Badge>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#2C3E50] mb-6">
+          <Badge className="mb-4 bg-primary/10 text-primary">Únete al cambio</Badge>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
             El cambio empieza cuando decides ser parte de él
           </h2>
-          <p className="text-lg text-[#6B7280] max-w-3xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Sea cual sea tu origen, tu edad o tu historia, hay un lugar para ti en Mareas.
             Asóciate, colabora, solicita nuestros servicios o simplemente mantente informado/a.
           </p>
@@ -1182,7 +1182,7 @@ function ContactSection() {
           {/* Contact Form */}
           <Card className="border-0 shadow-lg">
             <CardHeader>
-              <CardTitle className="text-2xl text-[#2C3E50]">Contacta con nosotras</CardTitle>
+              <CardTitle className="text-2xl text-foreground">Contacta con nosotras</CardTitle>
               <CardDescription>
                 Cuéntanos cómo te gustaría participar o qué servicios necesitas.
               </CardDescription>
@@ -1197,23 +1197,23 @@ function ContactSection() {
                 <TabsContent value="asociarse">
                   {submitStatus === "done" ? (
                     <div className="flex flex-col items-center justify-center py-8 gap-3">
-                      <CheckCircle className="h-12 w-12 text-[#1A7F72]" />
-                      <h3 className="font-bold text-[#2C3E50] text-lg">¡Solicitud recibida!</h3>
-                      <p className="text-[#6B7280] text-center text-sm">Nos pondremos en contacto contigo en los próximos días. ¡Gracias por querer unirte a Mareas!</p>
+                      <CheckCircle className="h-12 w-12 text-secondary" />
+                      <h3 className="font-bold text-foreground text-lg">¡Solicitud recibida!</h3>
+                      <p className="text-muted-foreground text-center text-sm">Nos pondremos en contacto contigo en los próximos días. ¡Gracias por querer unirte a Mareas!</p>
                       <Button variant="outline" className="mt-2" onClick={() => setSubmitStatus("idle")}>Enviar otra</Button>
                     </div>
                   ) : (
                     <div className="space-y-4">
                       <div>
-                        <label className="text-sm font-medium text-[#2C3E50] mb-2 block">Nombre completo *</label>
+                        <label className="text-sm font-medium text-foreground mb-2 block">Nombre completo *</label>
                         <Input name="name" value={formData.name} onChange={handleChange} placeholder="Tu nombre" required />
                       </div>
                       <div>
-                        <label className="text-sm font-medium text-[#2C3E50] mb-2 block">Email *</label>
+                        <label className="text-sm font-medium text-foreground mb-2 block">Email *</label>
                         <Input name="email" type="email" value={formData.email} onChange={handleChange} placeholder="tu@email.com" required />
                       </div>
                       <div>
-                        <label className="text-sm font-medium text-[#2C3E50] mb-2 block">¿Qué Marea te interesa más?</label>
+                        <label className="text-sm font-medium text-foreground mb-2 block">¿Qué Marea te interesa más?</label>
                         <select
                           name="interest"
                           value={formData.interest}
@@ -1226,7 +1226,7 @@ function ContactSection() {
                           ))}
                         </select>
                       </div>
-                      <Button className="w-full bg-[#6B2D5B] hover:bg-[#4B1D3B] text-white" onClick={handleSubmit} disabled={submitStatus === "sending" || !formData.email}>
+                      <Button className="w-full bg-primary hover:bg-primary/90 text-white" onClick={handleSubmit} disabled={submitStatus === "sending" || !formData.email}>
                         {submitStatus === "sending" ? <span className="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full mr-2" /> : null}
                         Quiero asociarme
                         <ArrowRight className="ml-2 h-4 w-4" />
@@ -1238,23 +1238,23 @@ function ContactSection() {
                 <TabsContent value="servicios">
                   {submitStatus === "done" ? (
                     <div className="flex flex-col items-center justify-center py-8 gap-3">
-                      <CheckCircle className="h-12 w-12 text-[#1A7F72]" />
-                      <h3 className="font-bold text-[#2C3E50] text-lg">¡Solicitud recibida!</h3>
-                      <p className="text-[#6B7280] text-center text-sm">Nos pondremos en contacto con tu organización en breve. ¡Gracias por confiar en Mareas!</p>
+                      <CheckCircle className="h-12 w-12 text-secondary" />
+                      <h3 className="font-bold text-foreground text-lg">¡Solicitud recibida!</h3>
+                      <p className="text-muted-foreground text-center text-sm">Nos pondremos en contacto con tu organización en breve. ¡Gracias por confiar en Mareas!</p>
                       <Button variant="outline" className="mt-2" onClick={() => setSubmitStatus("idle")}>Enviar otra</Button>
                     </div>
                   ) : (
                     <div className="space-y-4">
                       <div>
-                        <label className="text-sm font-medium text-[#2C3E50] mb-2 block">Organización *</label>
+                        <label className="text-sm font-medium text-foreground mb-2 block">Organización *</label>
                         <Input name="name" value={formData.name} onChange={handleChange} placeholder="Nombre de tu organización" required />
                       </div>
                       <div>
-                        <label className="text-sm font-medium text-[#2C3E50] mb-2 block">Email profesional *</label>
+                        <label className="text-sm font-medium text-foreground mb-2 block">Email profesional *</label>
                         <Input name="email" type="email" value={formData.email} onChange={handleChange} placeholder="contacto@organizacion.org" required />
                       </div>
                       <div>
-                        <label className="text-sm font-medium text-[#2C3E50] mb-2 block">Área de Consultoría / Marea</label>
+                        <label className="text-sm font-medium text-foreground mb-2 block">Área de Consultoría / Marea</label>
                         <select
                           name="interest"
                           value={formData.interest}
@@ -1268,10 +1268,10 @@ function ContactSection() {
                         </select>
                       </div>
                       <div>
-                        <label className="text-sm font-medium text-[#2C3E50] mb-2 block">Mensaje *</label>
+                        <label className="text-sm font-medium text-foreground mb-2 block">Mensaje *</label>
                         <Textarea name="message" value={formData.message} onChange={handleChange} placeholder="Cuéntanos más sobre tu proyecto o necesidades..." rows={3} required />
                       </div>
-                      <Button className="w-full bg-[#1A7F72] hover:bg-[#157566] text-white" onClick={handleSubmit} disabled={submitStatus === "sending" || !formData.email || !formData.message}>
+                      <Button className="w-full bg-secondary hover:bg-[#157566] text-white" onClick={handleSubmit} disabled={submitStatus === "sending" || !formData.email || !formData.message}>
                         {submitStatus === "sending" ? <span className="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full mr-2" /> : null}
                         Solicitar información
                         <ArrowRight className="ml-2 h-4 w-4" />
@@ -1283,23 +1283,23 @@ function ContactSection() {
                 <TabsContent value="colaborar">
                   {submitStatus === "done" ? (
                     <div className="flex flex-col items-center justify-center py-8 gap-3">
-                      <CheckCircle className="h-12 w-12 text-[#1A7F72]" />
-                      <h3 className="font-bold text-[#2C3E50] text-lg">¡Gracias por tu interés!</h3>
-                      <p className="text-[#6B7280] text-center text-sm">Nos pondremos en contacto contigo pronto para explorar cómo colaborar juntos.</p>
+                      <CheckCircle className="h-12 w-12 text-secondary" />
+                      <h3 className="font-bold text-foreground text-lg">¡Gracias por tu interés!</h3>
+                      <p className="text-muted-foreground text-center text-sm">Nos pondremos en contacto contigo pronto para explorar cómo colaborar juntos.</p>
                       <Button variant="outline" className="mt-2" onClick={() => setSubmitStatus("idle")}>Enviar otra</Button>
                     </div>
                   ) : (
                     <div className="space-y-4">
                       <div>
-                        <label className="text-sm font-medium text-[#2C3E50] mb-2 block">Nombre completo *</label>
+                        <label className="text-sm font-medium text-foreground mb-2 block">Nombre completo *</label>
                         <Input name="name" value={formData.name} onChange={handleChange} placeholder="Tu nombre" required />
                       </div>
                       <div>
-                        <label className="text-sm font-medium text-[#2C3E50] mb-2 block">Email *</label>
+                        <label className="text-sm font-medium text-foreground mb-2 block">Email *</label>
                         <Input name="email" type="email" value={formData.email} onChange={handleChange} placeholder="tu@email.com" required />
                       </div>
                       <div>
-                        <label className="text-sm font-medium text-[#2C3E50] mb-2 block">¿Con qué Marea te gustaría colaborar?</label>
+                        <label className="text-sm font-medium text-foreground mb-2 block">¿Con qué Marea te gustaría colaborar?</label>
                         <select
                           name="interest"
                           value={formData.interest}
@@ -1313,7 +1313,7 @@ function ContactSection() {
                         </select>
                       </div>
                       <div>
-                        <label className="text-sm font-medium text-[#2C3E50] mb-2 block">Forma de colaboración</label>
+                        <label className="text-sm font-medium text-foreground mb-2 block">Forma de colaboración</label>
                         <Input name="message" value={formData.message} onChange={handleChange} placeholder="Donación, Alianza, Voluntariado..." />
                       </div>
                       <Button className="w-full bg-[#4A7C59] hover:bg-[#3A6C49] text-white" onClick={handleSubmit} disabled={submitStatus === "sending" || !formData.email}>
@@ -1332,24 +1332,24 @@ function ContactSection() {
           {/* Contact Info */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-xl font-bold text-[#2C3E50] mb-6">Información de contacto</h3>
+              <h3 className="text-xl font-bold text-foreground mb-6">Información de contacto</h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-[#6B2D5B]/10 flex items-center justify-center flex-shrink-0">
-                    <MapPin className="h-5 w-5 text-[#6B2D5B]" />
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <MapPin className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <p className="font-medium text-[#2C3E50]">Dirección</p>
-                    <p className="text-[#6B7280]">Carrer de Tarragona 8, 2,3ºG. 43840 Salou, Tarragona, Cataluña, España</p>
+                    <p className="font-medium text-foreground">Dirección</p>
+                    <p className="text-muted-foreground">Carrer de Tarragona 8, 2,3ºG. 43840 Salou, Tarragona, Cataluña, España</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-[#1A7F72]/10 flex items-center justify-center flex-shrink-0">
-                    <Mail className="h-5 w-5 text-[#1A7F72]" />
+                  <div className="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0">
+                    <Mail className="h-5 w-5 text-secondary" />
                   </div>
                   <div>
-                    <p className="font-medium text-[#2C3E50]">Email</p>
-                    <a href="mailto:info@mareas.org" className="text-[#1A7F72] hover:underline">info@mareas.org</a>
+                    <p className="font-medium text-foreground">Email</p>
+                    <a href="mailto:info@mareas.org" className="text-secondary hover:underline">info@mareas.org</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -1357,17 +1357,17 @@ function ContactSection() {
                     <Phone className="h-5 w-5 text-[#4A7C59]" />
                   </div>
                   <div>
-                    <p className="font-medium text-[#2C3E50]">Teléfono</p>
+                    <p className="font-medium text-foreground">Teléfono</p>
                     <a href="tel:+34611614662" className="text-[#4A7C59] hover:underline">+34 611 61 46 62</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-[#6B2D5B]/10 flex items-center justify-center flex-shrink-0">
-                    <FileText className="h-5 w-5 text-[#6B2D5B]" />
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <FileText className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <p className="font-medium text-[#2C3E50]">NIF</p>
-                    <p className="text-[#6B7280]">G26956961</p>
+                    <p className="font-medium text-foreground">NIF</p>
+                    <p className="text-muted-foreground">G26956961</p>
                   </div>
                 </div>
               </div>
@@ -1375,10 +1375,10 @@ function ContactSection() {
 
             {/* Social Media */}
             <div>
-              <h3 className="text-lg font-bold text-[#2C3E50] mb-4">Síguenos</h3>
+              <h3 className="text-lg font-bold text-foreground mb-4">Síguenos</h3>
               <div className="flex gap-3">
                 <a href="https://www.instagram.com/mareaslab" target="_blank" rel="noopener noreferrer" aria-label="Visitar nuestro perfil en Instagram">
-                  <Button variant="outline" size="icon" className="rounded-full border-[#6B2D5B]/20 hover:bg-[#6B2D5B] hover:text-white hover:border-[#6B2D5B]">
+                  <Button variant="outline" size="icon" className="rounded-full border-primary/20 hover:bg-primary hover:text-white hover:border-primary">
                     <Instagram className="h-5 w-5" aria-hidden="true" />
                   </Button>
                 </a>
@@ -1386,25 +1386,25 @@ function ContactSection() {
             </div>
 
             {/* Legal Info */}
-            <Card className="bg-[#F8F9FA] border-0">
+            <Card className="bg-muted/30 border-0">
               <CardContent className="p-6">
-                <h4 className="font-bold text-[#2C3E50] mb-3">Régimen Jurídico</h4>
-                <p className="text-sm text-[#6B7280] mb-4">
+                <h4 className="font-bold text-foreground mb-3">Régimen Jurídico</h4>
+                <p className="text-sm text-muted-foreground mb-4">
                   <strong>Mareas, Lab de innovación social y digital</strong> (NIF: G26956961)<br />
                   Asociación regulada por la Ley 4/2008, de 24 de abril, del libro tercero del
                   Código civil de Cataluña, relativo a las personas jurídicas, y la Ley Orgánica
                   1/2002, de 22 de marzo, reguladora del derecho de asociación. Inscrita en el Registre d'Associacions de la Generalitat de Catalunya (secció 1ª, resolució 23/7/26) con número de inscripción: 80169.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <Button variant="link" className="text-[#6B2D5B] p-0 h-auto text-sm">
+                  <Button variant="link" className="text-primary p-0 h-auto text-sm">
                     Aviso Legal
                   </Button>
-                  <span className="text-[#6B7280]">•</span>
-                  <Button variant="link" className="text-[#6B2D5B] p-0 h-auto text-sm">
+                  <span className="text-muted-foreground">•</span>
+                  <Button variant="link" className="text-primary p-0 h-auto text-sm">
                     Privacidad
                   </Button>
-                  <span className="text-[#6B7280]">•</span>
-                  <Button variant="link" className="text-[#6B2D5B] p-0 h-auto text-sm">
+                  <span className="text-muted-foreground">•</span>
+                  <Button variant="link" className="text-primary p-0 h-auto text-sm">
                     Cookies
                   </Button>
                 </div>
@@ -1440,7 +1440,7 @@ function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-6">
-              <Waves className="h-8 w-8 text-[#1A7F72]" />
+              <Waves className="h-8 w-8 text-secondary" />
               <span className="text-xl font-bold">Mareas</span>
             </div>
             <p className="text-white/70 text-sm mb-6">
