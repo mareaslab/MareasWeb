@@ -82,6 +82,7 @@ function Header() {
     { label: "Servicios", href: "/servicios" },
     { label: "Proyectos", href: "/proyectos" },
     { label: "Incidencia", href: "/incidencia" },
+    { label: "Contranarrativas", href: "/contranarrativas" },
     { label: "Contacto", href: "/contacto" },
   ];
 
