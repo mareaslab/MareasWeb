@@ -187,7 +187,7 @@ function HeroSection() {
   return (
     <section id="inicio" className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background with gradient - Even Lighter version */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#BC66A3] via-[#A34B8A] to-[#43C7B5]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary\/80 to-secondary" />
 
       {/* Animated waves overlay */}
       <div className="absolute inset-0 opacity-20">
@@ -252,15 +252,15 @@ function HeroSection() {
           <div className="grid grid-cols-3 gap-8 mt-16 pt-8 border-t border-white/20">
             <div>
               <p className="text-3xl md:text-4xl font-bold text-white">9</p>
-              <p className="text-white/70 text-sm">Áreas de especialización</p>
+              <p className="text-white/80 dark:text-muted-foreground text-sm">Áreas de especialización</p>
             </div>
             <div>
               <p className="text-3xl md:text-4xl font-bold text-white">100%</p>
-              <p className="text-white/70 text-sm">Reinversión social</p>
+              <p className="text-white/80 dark:text-muted-foreground text-sm">Reinversión social</p>
             </div>
             <div>
               <p className="text-3xl md:text-4xl font-bold text-white">ODS</p>
-              <p className="text-white/70 text-sm">Agenda 2030</p>
+              <p className="text-white/80 dark:text-muted-foreground text-sm">Agenda 2030</p>
             </div>
           </div>
         </div>
@@ -580,7 +580,7 @@ function AboutSection() {
               </div>
             </div>
             {/* Decorative elements */}
-            <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-[#4A7C59]/20 rounded-xl -z-10" />
+            <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-accent/20 rounded-xl -z-10" />
             <div className="absolute -top-4 -right-4 w-32 h-32 bg-secondary/10 rounded-full -z-10" />
           </div>
         </div>
@@ -611,7 +611,7 @@ function AboutSection() {
         <div className="mt-20 bg-background rounded-2xl p-8 md:p-12 shadow-sm">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <Badge className="mb-4 bg-[#4A7C59]/10 text-[#4A7C59]">Compromiso</Badge>
+              <Badge className="mb-4 bg-accent/10 text-accent">Compromiso</Badge>
               <h3 className="text-2xl font-bold text-foreground mb-4">Transparencia Institucional</h3>
               <p className="text-muted-foreground mb-6 leading-relaxed">
                 Como entidad regulada por la Ley 4/2008 de Cataluña, rendimos cuentas de cada euro
@@ -634,7 +634,7 @@ function AboutSection() {
                 <p className="text-sm text-muted-foreground">Régimen jurídico</p>
               </div>
               <div className="bg-muted/30 rounded-xl p-6 text-center">
-                <p className="text-3xl font-bold text-[#4A7C59]">ESS</p>
+                <p className="text-3xl font-bold text-accent">ESS</p>
                 <p className="text-sm text-muted-foreground">Economía Social</p>
               </div>
               <div className="bg-muted/30 rounded-xl p-6 text-center">
@@ -866,11 +866,11 @@ function ProjectsSection() {
                   </div>
                   <div className="mt-8 space-y-4">
                     <div className="flex items-center gap-2">
-                      <Target className="h-5 w-5 text-white/70" />
+                      <Target className="h-5 w-5 text-white/80 dark:text-muted-foreground" />
                       <span className="text-sm font-medium">Estado: {project.status}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Handshake className="h-5 w-5 text-white/70" />
+                      <Handshake className="h-5 w-5 text-white/80 dark:text-muted-foreground" />
                       <span className="text-sm font-medium">Apoyo: {project.budget}</span>
                     </div>
                   </div>
@@ -1313,7 +1313,7 @@ function ContactSection() {
                         <label className="text-sm font-medium text-foreground mb-2 block">Forma de colaboración</label>
                         <Input name="message" value={formData.message} onChange={handleChange} placeholder="Donación, Alianza, Voluntariado..." />
                       </div>
-                      <Button className="w-full bg-[#4A7C59] hover:bg-[#3A6C49] text-white" onClick={handleSubmit} disabled={submitStatus === "sending" || !formData.email}>
+                      <Button className="w-full bg-accent hover:bg-[#3A6C49] text-white" onClick={handleSubmit} disabled={submitStatus === "sending" || !formData.email}>
                         {submitStatus === "sending" ? <span className="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full mr-2" /> : null}
                         Quiero colaborar
                         <ArrowRight className="ml-2 h-4 w-4" />
@@ -1350,12 +1350,12 @@ function ContactSection() {
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-[#4A7C59]/10 flex items-center justify-center flex-shrink-0">
-                    <Phone className="h-5 w-5 text-[#4A7C59]" />
+                  <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                    <Phone className="h-5 w-5 text-accent" />
                   </div>
                   <div>
                     <p className="font-medium text-foreground">Teléfono</p>
-                    <a href="tel:+34611614662" className="text-[#4A7C59] hover:underline">+34 611 61 46 62</a>
+                    <a href="tel:+34611614662" className="text-accent hover:underline">+34 611 61 46 62</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -1431,7 +1431,7 @@ function Footer() {
   ];
 
   return (
-    <footer className="bg-[#2C3E50] text-white">
+    <footer className="bg-[#2C3E50] dark:bg-card dark:border-t text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
@@ -1440,13 +1440,13 @@ function Footer() {
               <Waves className="h-8 w-8 text-secondary" />
               <span className="text-xl font-bold">Mareas</span>
             </div>
-            <p className="text-white/70 text-sm mb-6">
+            <p className="text-white/80 dark:text-muted-foreground text-sm mb-6">
               Transformación estructural hacia la justicia social y la equidad.
               Think-and-do tank por los Derechos Humanos.
             </p>
             <div className="flex gap-3">
               <a href="https://www.instagram.com/mareaslab" target="_blank" rel="noopener noreferrer" aria-label="Visitar nuestro perfil en Instagram">
-                <Button variant="ghost" size="icon" className="rounded-full text-white/70 hover:text-white hover:bg-background/10">
+                <Button variant="ghost" size="icon" className="rounded-full text-white/80 dark:text-muted-foreground hover:text-white hover:bg-background/10">
                   <Instagram className="h-5 w-5" />
                 </Button>
               </a>
@@ -1461,7 +1461,7 @@ function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-white/70 hover:text-white transition-colors text-sm"
+                    className="text-white/80 dark:text-muted-foreground hover:text-white transition-colors text-sm"
                   >
                     {link.label}
                   </a>
@@ -1478,7 +1478,7 @@ function Footer() {
                 <li key={index}>
                   <a
                     href="/#mareas"
-                    className="text-white/70 hover:text-white transition-colors text-sm"
+                    className="text-white/80 dark:text-muted-foreground hover:text-white transition-colors text-sm"
                   >
                     Mareas {marea}
                   </a>
@@ -1490,7 +1490,7 @@ function Footer() {
           {/* Contact */}
           <div>
             <h4 className="font-bold mb-6">Contacto</h4>
-            <ul className="space-y-3 text-sm text-white/70">
+            <ul className="space-y-3 text-sm text-white/80 dark:text-muted-foreground">
               <li className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
                 <span>Carrer de Tarragona 8, 2,3ºG. 43840 Salou, Tarragona, Cataluña, España</span>
