@@ -88,7 +88,7 @@ function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-        ? "bg-white/95 backdrop-blur-md shadow-lg"
+        ? "bg-background/95 backdrop-blur-md shadow-lg"
         : "bg-transparent"
         }`}
     >
@@ -197,13 +197,13 @@ function HeroSection() {
       </div>
 
       {/* Floating elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 rounded-full bg-white/10 animate-float" />
+      <div className="absolute top-20 left-10 w-20 h-20 rounded-full bg-background/10 animate-float" />
       <div className="absolute top-40 right-20 w-32 h-32 rounded-full bg-[#1A7F72]/20 animate-float" style={{ animationDelay: "2s" }} />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-40">
         <div className="max-w-4xl">
           {/* Badge */}
-          <Badge className="mb-6 bg-white/20 text-white border-white/30 hover:bg-white/30 text-sm px-4 py-1">
+          <Badge className="mb-6 bg-background/20 text-white border-white/30 hover:bg-background/30 text-sm px-4 py-1">
             Think-and-Do Tank para la justicia social
           </Badge>
 
@@ -225,7 +225,7 @@ function HeroSection() {
             <Button
               asChild
               size="lg"
-              className="bg-white text-[#6B2D5B] hover:bg-white/90 text-lg px-8 py-6"
+              className="bg-background text-[#6B2D5B] hover:bg-background/90 text-lg px-8 py-6"
             >
               <a href="/#mareas">
                 Conoce nuestras 9 Mareas
@@ -236,7 +236,7 @@ function HeroSection() {
               asChild
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white/10 text-lg px-8 py-6"
+              className="border-white text-white hover:bg-background/10 text-lg px-8 py-6"
             >
               <a href="/servicios">
                 Solicita consultoría
@@ -420,7 +420,7 @@ function MareasSection() {
   };
 
   return (
-    <section id="mareas" className="py-20 md:py-32 bg-white">
+    <section id="mareas" className="py-20 md:py-32 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -442,7 +442,7 @@ function MareasSection() {
             return (
               <FadeIn key={marea.id} delay={index * 0.1}>
               <Card
-                className="group hover:shadow-xl transition-all duration-300 border-0 bg-white overflow-hidden cursor-pointer h-full"
+                className="group hover:shadow-xl transition-all duration-300 border-0 bg-background overflow-hidden cursor-pointer h-full"
                 style={{ animationDelay: `${index * 100}ms` }}
                 onClick={() => handleOpenMarea(marea)}
               >
@@ -590,7 +590,7 @@ function AboutSection() {
               return (
                 <div
                   key={index}
-                  className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow"
+                  className="bg-background rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow"
                 >
                   <div className="w-12 h-12 rounded-lg bg-[#6B2D5B]/10 flex items-center justify-center mb-4">
                     <IconComponent className="h-6 w-6 text-[#6B2D5B]" />
@@ -604,7 +604,7 @@ function AboutSection() {
         </div>
 
         {/* Transparency Section */}
-        <div className="mt-20 bg-white rounded-2xl p-8 md:p-12 shadow-sm">
+        <div className="mt-20 bg-background rounded-2xl p-8 md:p-12 shadow-sm">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <Badge className="mb-4 bg-[#4A7C59]/10 text-[#4A7C59]">Compromiso</Badge>
@@ -681,7 +681,7 @@ function ServicesSection() {
   };
 
   return (
-    <section id="servicios" className="py-20 md:py-32 bg-white" style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto none auto 800px' }}>
+    <section id="servicios" className="py-20 md:py-32 bg-background" style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto none auto 800px' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
         {/* Section Header */}
@@ -759,10 +759,10 @@ function ServicesSection() {
         {/* Real Projects */}
         <div className="mt-16 bg-gradient-to-br from-[#6B2D5B] to-[#4A1D3F] rounded-2xl p-8 md:p-12 text-white relative overflow-hidden shadow-xl">
           <div className="absolute top-0 right-0 -mr-16 -mt-16 opacity-10 blur-3xl pointer-events-none">
-            <div className="w-64 h-64 bg-white rounded-full"></div>
+            <div className="w-64 h-64 bg-background rounded-full"></div>
           </div>
           <div className="absolute bottom-0 left-0 -ml-16 -mb-16 opacity-10 blur-3xl pointer-events-none">
-            <div className="w-64 h-64 bg-white rounded-full"></div>
+            <div className="w-64 h-64 bg-background rounded-full"></div>
           </div>
           <div className="max-w-4xl mx-auto text-center relative z-10">
             <h3 className="text-2xl md:text-3xl font-bold mb-4">Experiencia en Proyectos Reales</h3>
@@ -770,9 +770,9 @@ function ServicesSection() {
               Nuestra metodología de investigación y acción no se queda en la teoría. Contamos con el respaldo y la financiación de entidades clave para el impacto social.
             </p>
             <div className="grid md:grid-cols-2 gap-6 text-left">
-              <div className="bg-white/10 rounded-xl p-6 backdrop-blur-sm border border-white/10 hover:bg-white/15 transition-colors">
+              <div className="bg-background/10 rounded-xl p-6 backdrop-blur-sm border border-white/10 hover:bg-background/15 transition-colors">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-12 h-12 rounded-lg bg-white flex items-center justify-center text-[#6B2D5B] font-black text-xl shadow-inner">
+                  <div className="w-12 h-12 rounded-lg bg-background flex items-center justify-center text-[#6B2D5B] font-black text-xl shadow-inner">
                     C
                   </div>
                   <div>
@@ -785,7 +785,7 @@ function ServicesSection() {
                 </p>
               </div>
 
-              <div className="bg-white/10 rounded-xl p-6 backdrop-blur-sm border border-white/10 hover:bg-white/15 transition-colors">
+              <div className="bg-background/10 rounded-xl p-6 backdrop-blur-sm border border-white/10 hover:bg-background/15 transition-colors">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#1A7F72] to-[#125A50] flex items-center justify-center text-white font-black text-xl shadow-inner">
                     R
@@ -853,7 +853,7 @@ function ProjectsSection() {
               <div className="flex flex-col md:flex-row">
                 <div className="bg-gradient-to-br from-[#1A7F72] to-[#125A50] md:w-1/3 p-8 text-white flex flex-col justify-between">
                   <div>
-                    <Badge className="bg-white/20 text-white hover:bg-white/30 border-0 mb-4">
+                    <Badge className="bg-background/20 text-white hover:bg-background/30 border-0 mb-4">
                       {project.category}
                     </Badge>
                     <h3 className="text-xl font-bold mb-2 leading-tight">
@@ -872,7 +872,7 @@ function ProjectsSection() {
                   </div>
                 </div>
                 
-                <div className="md:w-2/3 p-8 bg-white">
+                <div className="md:w-2/3 p-8 bg-background">
                   <div className="space-y-6">
                     <div>
                       <h4 className="text-lg font-bold text-[#2C3E50] mb-2 flex items-center gap-2">
@@ -970,7 +970,7 @@ function AdvocacySection() {
   ];
 
   return (
-    <section id="incidencia" className="py-20 md:py-32 bg-white" style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto none auto 800px' }}>
+    <section id="incidencia" className="py-20 md:py-32 bg-background" style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto none auto 800px' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
         {/* Section Header */}
@@ -1061,7 +1061,7 @@ function AdvocacySection() {
                   Recibe mensualmente novedades, recursos y convocatorias.
                 </p>
                 {newsletterStatus === "done" ? (
-                  <div className="flex items-center gap-2 bg-white/10 rounded-lg p-3">
+                  <div className="flex items-center gap-2 bg-background/10 rounded-lg p-3">
                     <CheckCircle className="h-5 w-5 text-green-300" />
                     <span className="text-sm text-white">¡Gracias! Te hemos suscrito correctamente.</span>
                   </div>
@@ -1073,10 +1073,10 @@ function AdvocacySection() {
                         value={newsletterEmail}
                         onChange={(e) => setNewsletterEmail(e.target.value)}
                         onKeyDown={(e) => e.key === "Enter" && handleNewsletter()}
-                        className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
+                        className="bg-background/10 border-white/20 text-white placeholder:text-white/50"
                       />
                       <Button
-                        className="bg-white text-[#6B2D5B] hover:bg-white/90"
+                        className="bg-background text-[#6B2D5B] hover:bg-background/90"
                         onClick={handleNewsletter}
                         disabled={newsletterStatus === "sending" || !newsletterEmail.includes("@")}
                       >
@@ -1449,7 +1449,7 @@ function Footer() {
             </p>
             <div className="flex gap-3">
               <a href="https://www.instagram.com/mareaslab" target="_blank" rel="noopener noreferrer" aria-label="Visitar nuestro perfil en Instagram">
-                <Button variant="ghost" size="icon" className="rounded-full text-white/70 hover:text-white hover:bg-white/10">
+                <Button variant="ghost" size="icon" className="rounded-full text-white/70 hover:text-white hover:bg-background/10">
                   <Instagram className="h-5 w-5" />
                 </Button>
               </a>
@@ -1514,7 +1514,7 @@ function Footer() {
           </div>
         </div>
 
-        <Separator className="my-12 bg-white/10" />
+        <Separator className="my-12 bg-background/10" />
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/50">
           <p>© 2026 Mareas, Lab de innovación social y digital (NIF: G26956961). Todos los derechos reservados.</p>
