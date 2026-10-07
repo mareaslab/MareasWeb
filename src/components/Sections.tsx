@@ -1356,37 +1356,18 @@ function ContactSection() {
                     <a href="tel:+34611614662" className="text-[#4A7C59] hover:underline">+34 611 61 46 62</a>
                   </div>
                 </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-[#6B2D5B]/10 flex items-center justify-center flex-shrink-0">
+                    <FileText className="h-5 w-5 text-[#6B2D5B]" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-[#2C3E50]">NIF / ID de Organización Benéfica</p>
+                    <p className="text-[#6B7280]">G26956961</p>
+                  </div>
+                </div>
               </div>
             </div>
 
-            {/* Social Media */}
-            <div>
-              <h3 className="text-lg font-bold text-[#2C3E50] mb-4">Síguenos</h3>
-              <div className="flex gap-3">
-                {[
-                  { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/mareaslab" },
-                  { icon: Twitter, label: "Twitter", href: "https://www.twitter.com" },
-                  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com" },
-                  { icon: Facebook, label: "Facebook", href: "https://www.facebook.com" },
-                  { icon: Youtube, label: "YouTube", href: "https://www.youtube.com" }
-                ].map((social, index) => {
-                  const IconComponent = social.icon;
-                  return (
-                    <a key={index} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={`Visitar nuestro perfil en ${social.label}`}>
-                      <Button
-                        variant="outline"
-                        size="icon"
-                        className="rounded-full border-[#6B2D5B]/20 hover:bg-[#6B2D5B] hover:text-white hover:border-[#6B2D5B]"
-                        aria-label={social.label}
-                      >
-                        <IconComponent className="h-5 w-5" aria-hidden="true" />
-                        <span className="sr-only">{social.label}</span>
-                      </Button>
-                    </a>
-                  );
-                })}
-              </div>
-            </div>
 
             {/* Legal Info */}
             <Card className="bg-[#F8F9FA] border-0">
@@ -1450,27 +1431,6 @@ function Footer() {
               Transformación estructural hacia la justicia social y la equidad.
               Think-and-do tank por los Derechos Humanos.
             </p>
-            <div className="flex gap-3">
-              {[
-                { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/mareaslab" },
-                { icon: Twitter, label: "Twitter", href: "https://www.twitter.com" },
-                { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com" },
-                { icon: Facebook, label: "Facebook", href: "https://www.facebook.com" }
-              ].map((social, index) => {
-                const IconComponent = social.icon;
-                return (
-                  <a key={index} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={`Visitar nuestro perfil en ${social.label}`}>
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      className="rounded-full text-white/70 hover:text-white hover:bg-white/10"
-                    >
-                      <IconComponent className="h-5 w-5" />
-                    </Button>
-                  </a>
-                );
-              })}
-            </div>
           </div>
 
           {/* Quick Links */}
@@ -1522,6 +1482,10 @@ function Footer() {
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 flex-shrink-0" />
                 <a href="tel:+34611614662" className="hover:text-white">+34 611 61 46 62</a>
+              </li>
+              <li className="flex items-center gap-2">
+                <FileText className="h-4 w-4 flex-shrink-0" />
+                <span>NIF: G26956961</span>
               </li>
             </ul>
           </div>
