@@ -1368,6 +1368,17 @@ function ContactSection() {
               </div>
             </div>
 
+            {/* Social Media */}
+            <div>
+              <h3 className="text-lg font-bold text-[#2C3E50] mb-4">Síguenos</h3>
+              <div className="flex gap-3">
+                <a href="https://www.instagram.com/mareaslab" target="_blank" rel="noopener noreferrer" aria-label="Visitar nuestro perfil en Instagram">
+                  <Button variant="outline" size="icon" className="rounded-full border-[#6B2D5B]/20 hover:bg-[#6B2D5B] hover:text-white hover:border-[#6B2D5B]">
+                    <Instagram className="h-5 w-5" aria-hidden="true" />
+                  </Button>
+                </a>
+              </div>
+            </div>
 
             {/* Legal Info */}
             <Card className="bg-[#F8F9FA] border-0">
@@ -1431,6 +1442,13 @@ function Footer() {
               Transformación estructural hacia la justicia social y la equidad.
               Think-and-do tank por los Derechos Humanos.
             </p>
+            <div className="flex gap-3">
+              <a href="https://www.instagram.com/mareaslab" target="_blank" rel="noopener noreferrer" aria-label="Visitar nuestro perfil en Instagram">
+                <Button variant="ghost" size="icon" className="rounded-full text-white/70 hover:text-white hover:bg-white/10">
+                  <Instagram className="h-5 w-5" />
+                </Button>
+              </a>
+            </div>
           </div>
 
           {/* Quick Links */}
