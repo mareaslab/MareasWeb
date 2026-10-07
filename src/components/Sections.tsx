@@ -18,6 +18,7 @@ import { Separator } from "@/components/ui/separator";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import {
   Menu,
   X,
@@ -120,6 +121,7 @@ function Header() {
 
           {/* CTA Button Desktop */}
           <div className="hidden md:flex items-center gap-4">
+            <ThemeToggle className={isScrolled ? "text-[#2C3E50]" : "text-white"} />
             <Button
               asChild
               className="bg-[#6B2D5B] hover:bg-[#4B1D3B] text-white"
@@ -132,12 +134,14 @@ function Header() {
           </div>
 
           {/* Mobile Menu */}
-          <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetTrigger asChild className="md:hidden">
-              <Button variant="ghost" size="icon">
-                <Menu className={`h-6 w-6 ${isScrolled ? "text-[#2C3E50]" : "text-white"}`} />
-              </Button>
-            </SheetTrigger>
+          <div className="flex items-center gap-2 md:hidden">
+            <ThemeToggle className={isScrolled ? "text-[#2C3E50]" : "text-white"} />
+            <Sheet open={isOpen} onOpenChange={setIsOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Menu className={`h-6 w-6 ${isScrolled ? "text-[#2C3E50]" : "text-white"}`} />
+                </Button>
+              </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
               <div className="flex flex-col gap-6 mt-8">
                 <div className="flex items-center gap-2 mb-4">
@@ -167,6 +171,7 @@ function Header() {
               </div>
             </SheetContent>
           </Sheet>
+          </div>
         </div>
       </div>
     </header>
