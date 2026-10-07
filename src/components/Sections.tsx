@@ -1361,7 +1361,7 @@ function ContactSection() {
                     <FileText className="h-5 w-5 text-[#6B2D5B]" />
                   </div>
                   <div>
-                    <p className="font-medium text-[#2C3E50]">NIF / ID de Organización Benéfica</p>
+                    <p className="font-medium text-[#2C3E50]">NIF</p>
                     <p className="text-[#6B7280]">G26956961</p>
                   </div>
                 </div>
