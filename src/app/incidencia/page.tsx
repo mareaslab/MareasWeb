@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Incidencia y Recursos | Mareas Lab",
+  description: "Recursos, investigaciones y campañas de incidencia política para la transformación social y digital.",
+};
+
 import { Header, AdvocacySection, Footer } from "@/components/Sections";
 
 export default function Incidencia() {
