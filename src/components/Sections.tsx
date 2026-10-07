@@ -229,7 +229,7 @@ function HeroSection() {
             <Button
               asChild
               size="lg"
-              className="bg-background text-primary hover:bg-background/90 text-lg px-8 py-6"
+              className="bg-white text-[#6B2D5B] hover:bg-white/90 text-lg px-8 py-6 border-0"
             >
               <a href="/#mareas">
                 Conoce nuestras 9 Mareas
@@ -240,7 +240,7 @@ function HeroSection() {
               asChild
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-background/10 text-lg px-8 py-6"
+              className="bg-transparent border-white text-white hover:bg-white hover:text-[#6B2D5B] text-lg px-8 py-6"
             >
               <a href="/servicios">
                 Solicita consultoría
