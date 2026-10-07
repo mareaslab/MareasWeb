@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import { type MareaData } from "@/components/MareaModal";
@@ -63,9 +64,11 @@ import {
 } from "lucide-react";
 
 // Navigation Component
-function Header() {
+export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+  const isDarkText = isScrolled || pathname !== '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -88,7 +91,7 @@ function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isDarkText
         ? "bg-background/95 backdrop-blur-md shadow-lg"
         : "bg-transparent"
         }`}
@@ -101,7 +104,7 @@ function Header() {
               <Waves className="h-8 w-8 text-primary group-hover:text-secondary transition-colors" />
               <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-secondary rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
-            <span className={`text-xl font-bold ${isScrolled ? "text-primary" : "text-white"}`}>
+            <span className={`text-xl font-bold ${isDarkText ? "text-primary" : "text-white"}`}>
               Mareas
             </span>
           </a>
@@ -112,7 +115,7 @@ function Header() {
               <a
                 key={item.href}
                 href={item.href}
-                className={`text-sm font-medium transition-colors hover:text-secondary ${isScrolled ? "text-foreground" : "text-white/90"
+                className={`text-sm font-medium transition-colors hover:text-secondary ${isDarkText ? "text-foreground" : "text-white/90"
                   }`}
               >
                 {item.label}
@@ -122,7 +125,7 @@ function Header() {
 
           {/* CTA Button Desktop */}
           <div className="hidden md:flex items-center gap-4">
-            <ThemeToggle className={isScrolled ? "text-foreground" : "text-white"} />
+            <ThemeToggle className={isDarkText ? "text-foreground" : "text-white"} />
             <Button
               asChild
               className="bg-primary hover:bg-primary/90 text-white"
@@ -136,11 +139,11 @@ function Header() {
 
           {/* Mobile Menu */}
           <div className="flex items-center gap-2 md:hidden">
-            <ThemeToggle className={isScrolled ? "text-foreground" : "text-white"} />
+            <ThemeToggle className={isDarkText ? "text-foreground" : "text-white"} />
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon">
-                  <Menu className={`h-6 w-6 ${isScrolled ? "text-foreground" : "text-white"}`} />
+                  <Menu className={`h-6 w-6 ${isDarkText ? "text-foreground" : "text-white"}`} />
                 </Button>
               </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
