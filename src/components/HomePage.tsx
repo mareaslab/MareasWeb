@@ -1,6 +1,6 @@
 import { Header, HeroSection, MareasSection, Footer } from "@/components/Sections";
 
-export default function Home() {
+export function HomePage() {
   return (
     <main className="min-h-screen flex flex-col">
       <Header />

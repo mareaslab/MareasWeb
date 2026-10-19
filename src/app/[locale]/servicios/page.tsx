@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Servicios de Consultoría y Formación | Mareas Lab",
-  description: "Descubre nuestros servicios de consultoría estratégica, innovación digital y formación con perspectiva interseccional.",
-};
-
 import { Header, ServicesSection, Footer } from "@/components/Sections";
+import { getMessages } from "@/i18n/messages";
+import { getLocale, pageMetadata, type LocaleProps } from "@/i18n/server";
+
+export async function generateMetadata({ params }: LocaleProps): Promise<Metadata> {
+  const locale = await getLocale(params);
+  return pageMetadata(locale, "/servicios", getMessages(locale).meta.pages.servicios);
+}
 
 export default function Servicios() {
   return (

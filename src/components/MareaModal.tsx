@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, CheckCircle, Users, Target, BookOpen } from "lucide-react";
+import { useMessages } from "@/i18n/LocaleProvider";
 
 export interface MareaData {
   id: number;
@@ -30,6 +31,7 @@ interface MareaModalProps {
 }
 
 export function MareaModal({ marea, open, onClose }: MareaModalProps) {
+  const t = useMessages().mareas.modal;
   if (!marea) return null;
   const IconComponent = marea.icon;
 
@@ -63,7 +65,7 @@ export function MareaModal({ marea, open, onClose }: MareaModalProps) {
               <div className="bg-[#F8F9FA] rounded-xl p-5">
                 <div className="flex items-center gap-2 mb-3">
                   <Target className="h-5 w-5" style={{ color: marea.color }} />
-                  <h3 className="font-semibold text-[#2C3E50]">Enfoque</h3>
+                  <h3 className="font-semibold text-[#2C3E50]">{t.focus}</h3>
                 </div>
                 <p className="text-[#6B7280] text-sm leading-relaxed">{marea.detalle.enfoque}</p>
               </div>
@@ -72,7 +74,7 @@ export function MareaModal({ marea, open, onClose }: MareaModalProps) {
               <div>
                 <div className="flex items-center gap-2 mb-3">
                   <BookOpen className="h-5 w-5" style={{ color: marea.color }} />
-                  <h3 className="font-semibold text-[#2C3E50]">Actividades principales</h3>
+                  <h3 className="font-semibold text-[#2C3E50]">{t.activities}</h3>
                 </div>
                 <div className="grid sm:grid-cols-2 gap-2">
                   {marea.detalle.actividades.map((act, i) => (
@@ -88,7 +90,7 @@ export function MareaModal({ marea, open, onClose }: MareaModalProps) {
               <div>
                 <div className="flex items-center gap-2 mb-3">
                   <Users className="h-5 w-5" style={{ color: marea.color }} />
-                  <h3 className="font-semibold text-[#2C3E50]">Proyectos destacados</h3>
+                  <h3 className="font-semibold text-[#2C3E50]">{t.projects}</h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {marea.detalle.proyectos.map((proj, i) => (
@@ -106,7 +108,7 @@ export function MareaModal({ marea, open, onClose }: MareaModalProps) {
               {/* Cómo participar */}
               <Card className="border-l-4" style={{ borderLeftColor: marea.color }}>
                 <CardContent className="p-4">
-                  <h3 className="font-semibold text-[#2C3E50] mb-2">¿Cómo puedes participar?</h3>
+                  <h3 className="font-semibold text-[#2C3E50] mb-2">{t.howToParticipate}</h3>
                   <p className="text-sm text-[#6B7280] leading-relaxed">{marea.detalle.comoParticipar}</p>
                 </CardContent>
               </Card>
@@ -125,11 +127,11 @@ export function MareaModal({ marea, open, onClose }: MareaModalProps) {
                 }, 300);
               }}
             >
-              Quiero participar
+              {t.join}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
             <Button variant="outline" onClick={onClose}>
-              Cerrar
+              {t.close}
             </Button>
           </div>
         </div>

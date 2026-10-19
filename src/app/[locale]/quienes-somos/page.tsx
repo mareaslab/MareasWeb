@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Quiénes Somos | Mareas Lab",
-  description: "Conoce la Asociación Mareas: organización base juvenil e intercultural dedicada a la innovación social y digital.",
-};
-
 import { Header, AboutSection, Footer } from "@/components/Sections";
+import { getMessages } from "@/i18n/messages";
+import { getLocale, pageMetadata, type LocaleProps } from "@/i18n/server";
+
+export async function generateMetadata({ params }: LocaleProps): Promise<Metadata> {
+  const locale = await getLocale(params);
+  return pageMetadata(locale, "/quienes-somos", getMessages(locale).meta.pages.quienesSomos);
+}
 
 export default function QuienesSomos() {
   return (

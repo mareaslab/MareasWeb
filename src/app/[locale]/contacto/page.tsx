@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Contacto | Mareas Lab",
-  description: "Ponte en contacto con Mareas Lab. Únete a nuestra red o solicita información sobre nuestras colaboraciones y servicios.",
-};
-
 import { Header, ContactSection, Footer } from "@/components/Sections";
+import { getMessages } from "@/i18n/messages";
+import { getLocale, pageMetadata, type LocaleProps } from "@/i18n/server";
+
+export async function generateMetadata({ params }: LocaleProps): Promise<Metadata> {
+  const locale = await getLocale(params);
+  return pageMetadata(locale, "/contacto", getMessages(locale).meta.pages.contacto);
+}
 
 export default function Contacto() {
   return (
