@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -927,9 +928,10 @@ function ProjectsSection() {
 function AdvocacySection() {
   const [newsletterEmail, setNewsletterEmail] = useState("");
   const [newsletterStatus, setNewsletterStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
+  const [newsletterConsent, setNewsletterConsent] = useState(false);
 
   const handleNewsletter = async () => {
-    if (!newsletterEmail.includes("@")) return;
+    if (!newsletterEmail.includes("@") || !newsletterConsent) return;
     setNewsletterStatus("sending");
 
     try {
@@ -943,6 +945,7 @@ function AdvocacySection() {
         body: JSON.stringify({
           tipo_consulta: "newsletter",
           email: newsletterEmail,
+          acepta_privacidad: `Sí (${new Date().toISOString()})`,
           _subject: "Nueva suscripción a la Newsletter"
         })
       });
@@ -950,6 +953,7 @@ function AdvocacySection() {
       if (res.ok) {
         setNewsletterStatus("done");
         setNewsletterEmail("");
+        setNewsletterConsent(false);
       } else {
         setNewsletterStatus("error");
       }
@@ -1075,7 +1079,8 @@ function AdvocacySection() {
                         <Button
                           className="bg-background text-primary hover:bg-background/90"
                           onClick={handleNewsletter}
-                          disabled={newsletterStatus === "sending" || !newsletterEmail.includes("@")}
+                          disabled={newsletterStatus === "sending" || !newsletterEmail.includes("@") || !newsletterConsent}
+                          aria-label="Suscribirme a la newsletter"
                         >
                           {newsletterStatus === "sending" ? (
                             <span className="animate-spin h-4 w-4 border-2 border-primary border-t-transparent rounded-full" />
@@ -1084,6 +1089,13 @@ function AdvocacySection() {
                           )}
                         </Button>
                       </div>
+                      <ConsentCheckbox
+                        id="consent-newsletter"
+                        checked={newsletterConsent}
+                        onCheckedChange={setNewsletterConsent}
+                        purpose="enviarte la newsletter"
+                        onDark
+                      />
                       {newsletterStatus === "error" && (
                         <p className="text-red-300 text-sm mt-1">Hubo un error al suscribirte. Inténtalo de nuevo.</p>
                       )}
@@ -1100,22 +1112,20 @@ function AdvocacySection() {
 }
 
 // Contact Section
+const emptyContactForm = { name: "", email: "", interest: "", collabType: "", message: "" };
+
 function ContactSection() {
   const [submitStatus, setSubmitStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
   const [activeTab, setActiveTab] = useState("asociarse");
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    interest: "",
-    message: ""
-  });
+  const [formData, setFormData] = useState(emptyContactForm);
+  const [consent, setConsent] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const handleSubmit = async () => {
-    if (!formData.email) return;
+    if (!formData.email || !consent) return;
     setSubmitStatus("sending");
 
     try {
@@ -1132,13 +1142,16 @@ function ContactSection() {
           nombre: formData.name,
           email: formData.email,
           marea_interes: formData.interest || "No especificada",
-          mensaje: formData.message || "Sin mensaje"
+          ...(activeTab === "colaborar" && { forma_colaboracion: formData.collabType || "No especificada" }),
+          mensaje: formData.message || "Sin mensaje",
+          acepta_privacidad: `Sí (${new Date().toISOString()})`
         })
       });
 
       if (res.ok) {
         setSubmitStatus("done");
-        setFormData({ name: "", email: "", interest: "", message: "" });
+        setFormData(emptyContactForm);
+        setConsent(false);
       } else {
         const err = await res.json().catch(() => ({}));
         console.error("Formspree error response:", err);
@@ -1156,7 +1169,8 @@ function ContactSection() {
   const handleTabChange = (value: string) => {
     setActiveTab(value);
     setSubmitStatus("idle");
-    setFormData({ name: "", email: "", interest: "", message: "" });
+    setFormData(emptyContactForm);
+    setConsent(false);
   };
 
   return (
@@ -1223,7 +1237,12 @@ function ContactSection() {
                             ))}
                           </select>
                         </div>
-                        <Button className="w-full bg-primary hover:bg-primary/90 text-white" onClick={handleSubmit} disabled={submitStatus === "sending" || !formData.email}>
+                        <div>
+                          <label className="text-sm font-medium text-foreground mb-2 block">Mensaje</label>
+                          <Textarea name="message" value={formData.message} onChange={handleChange} placeholder="Cuéntanos algo sobre ti y por qué quieres unirte (opcional)" rows={3} />
+                        </div>
+                        <ConsentCheckbox id="consent-asociarse" checked={consent} onCheckedChange={setConsent} purpose="gestionar tu solicitud de asociación" />
+                        <Button className="w-full bg-primary hover:bg-primary/90 text-white" onClick={handleSubmit} disabled={submitStatus === "sending" || !formData.email || !consent}>
                           {submitStatus === "sending" ? <span className="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full mr-2" /> : null}
                           Quiero asociarme
                           <ArrowRight className="ml-2 h-4 w-4" />
@@ -1268,7 +1287,8 @@ function ContactSection() {
                           <label className="text-sm font-medium text-foreground mb-2 block">Mensaje *</label>
                           <Textarea name="message" value={formData.message} onChange={handleChange} placeholder="Cuéntanos más sobre tu proyecto o necesidades..." rows={3} required />
                         </div>
-                        <Button className="w-full bg-secondary hover:bg-[#157566] text-white" onClick={handleSubmit} disabled={submitStatus === "sending" || !formData.email || !formData.message}>
+                        <ConsentCheckbox id="consent-servicios" checked={consent} onCheckedChange={setConsent} purpose="responder a tu solicitud de servicios" />
+                        <Button className="w-full bg-secondary hover:bg-[#157566] text-white" onClick={handleSubmit} disabled={submitStatus === "sending" || !formData.email || !formData.message || !consent}>
                           {submitStatus === "sending" ? <span className="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full mr-2" /> : null}
                           Solicitar información
                           <ArrowRight className="ml-2 h-4 w-4" />
@@ -1311,9 +1331,14 @@ function ContactSection() {
                         </div>
                         <div>
                           <label className="text-sm font-medium text-foreground mb-2 block">Forma de colaboración</label>
-                          <Input name="message" value={formData.message} onChange={handleChange} placeholder="Donación, Alianza, Voluntariado..." />
+                          <Input name="collabType" value={formData.collabType} onChange={handleChange} placeholder="Donación, Alianza, Voluntariado..." />
                         </div>
-                        <Button className="w-full bg-accent hover:bg-[#3A6C49] text-white" onClick={handleSubmit} disabled={submitStatus === "sending" || !formData.email}>
+                        <div>
+                          <label className="text-sm font-medium text-foreground mb-2 block">Mensaje</label>
+                          <Textarea name="message" value={formData.message} onChange={handleChange} placeholder="Cuéntanos cómo te gustaría colaborar (opcional)" rows={3} />
+                        </div>
+                        <ConsentCheckbox id="consent-colaborar" checked={consent} onCheckedChange={setConsent} purpose="responder a tu propuesta de colaboración" />
+                        <Button className="w-full bg-accent hover:bg-[#3A6C49] text-white" onClick={handleSubmit} disabled={submitStatus === "sending" || !formData.email || !consent}>
                           {submitStatus === "sending" ? <span className="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full mr-2" /> : null}
                           Quiero colaborar
                           <ArrowRight className="ml-2 h-4 w-4" />
@@ -1385,16 +1410,16 @@ function ContactSection() {
                     1/2002, de 22 de marzo, reguladora del derecho de asociación. Inscrita en el Registre d'Associacions de la Generalitat de Catalunya (secció 1ª, resolució 23/7/26) con número de inscripción: 80169.
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    <Button variant="link" className="text-primary p-0 h-auto text-sm">
-                      Aviso Legal
+                    <Button asChild variant="link" className="text-primary p-0 h-auto text-sm">
+                      <a href="/aviso-legal">Aviso Legal</a>
                     </Button>
                     <span className="text-muted-foreground">•</span>
-                    <Button variant="link" className="text-primary p-0 h-auto text-sm">
-                      Privacidad
+                    <Button asChild variant="link" className="text-primary p-0 h-auto text-sm">
+                      <a href="/privacidad">Privacidad</a>
                     </Button>
                     <span className="text-muted-foreground">•</span>
-                    <Button variant="link" className="text-primary p-0 h-auto text-sm">
-                      Cookies
+                    <Button asChild variant="link" className="text-primary p-0 h-auto text-sm">
+                      <a href="/cookies">Cookies</a>
                     </Button>
                   </div>
                 </CardContent>
@@ -1505,13 +1530,48 @@ function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/50">
           <p>© 2026 Mareas, Lab de innovación social y digital (NIF: G26956961). Todos los derechos reservados.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">Aviso Legal</a>
-            <a href="#" className="hover:text-white transition-colors">Privacidad</a>
-            <a href="#" className="hover:text-white transition-colors">Cookies</a>
+            <a href="/aviso-legal" className="hover:text-white transition-colors">Aviso Legal</a>
+            <a href="/privacidad" className="hover:text-white transition-colors">Privacidad</a>
+            <a href="/cookies" className="hover:text-white transition-colors">Cookies</a>
           </div>
         </div>
       </div>
     </footer>
+  );
+}
+
+// Casilla de consentimiento RGPD con la primera capa de información (art. 11 LOPDGDD)
+function ConsentCheckbox({ id, checked, onCheckedChange, purpose, onDark = false }: {
+  id: string,
+  checked: boolean,
+  onCheckedChange: (checked: boolean) => void,
+  purpose: string,
+  onDark?: boolean
+}) {
+  const textColor = onDark ? "text-white/80" : "text-muted-foreground";
+  const linkColor = onDark ? "text-white underline" : "text-primary underline";
+
+  return (
+    <div className="space-y-2">
+      <div className="flex items-start gap-2">
+        <Checkbox
+          id={id}
+          checked={checked}
+          onCheckedChange={(value) => onCheckedChange(value === true)}
+          aria-required="true"
+          className={`mt-0.5 ${onDark ? "border-white/60" : ""}`}
+        />
+        <label htmlFor={id} className={`text-sm ${onDark ? "text-white" : "text-foreground"}`}>
+          He leído y acepto la{" "}
+          <a href="/privacidad" target="_blank" className={linkColor}>Política de Privacidad</a> *
+        </label>
+      </div>
+      <p className={`text-xs leading-snug ${textColor}`}>
+        Responsable: Mareas, Lab de innovación social y digital. Finalidad: {purpose}. Base legal: tu consentimiento.
+        Destinatarios: no se ceden datos; el envío se gestiona con Formspree (EE. UU.). Derechos: acceso, rectificación,
+        supresión y otros en info@mareas.org.
+      </p>
+    </div>
   );
 }
 
@@ -1531,7 +1591,6 @@ function FadeIn({ children, delay = 0, className = "" }: { children: React.React
 }
 
 export {
-  Header,
   HeroSection,
   MareasSection,
   AboutSection,
