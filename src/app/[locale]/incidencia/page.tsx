@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Incidencia y Recursos | Mareas Lab",
-  description: "Recursos, investigaciones y campañas de incidencia política para la transformación social y digital.",
-};
-
 import { Header, AdvocacySection, Footer } from "@/components/Sections";
+import { getMessages } from "@/i18n/messages";
+import { getLocale, pageMetadata, type LocaleProps } from "@/i18n/server";
+
+export async function generateMetadata({ params }: LocaleProps): Promise<Metadata> {
+  const locale = await getLocale(params);
+  return pageMetadata(locale, "/incidencia", getMessages(locale).meta.pages.incidencia);
+}
 
 export default function Incidencia() {
   return (
